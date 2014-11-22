@@ -40,7 +40,7 @@
 <body ng-controller="MainCtrl">
     <img src = "http://i.imgur.com/Pw9Ippn.png">
     <p class = "bg-danger">
-WARNING: MolarFast is still in development. If the answer you receive seems wrong, it probably is.
+<strong>WARNING</strong>: MolarFast is still in development. If the answer you receive seems wrong, it probably is.
 We suggest you check with<a href = "http://wolframalpha.com">Wolfram|Alpha</a>.</p>
     <!-- Molar Mass Calculations -->
     <form class="form-inline" role="form">
@@ -65,7 +65,7 @@ We suggest you check with<a href = "http://wolframalpha.com">Wolfram|Alpha</a>.<
         <h2>Time at the moment.</h2>
 
         <button ng-click = "displayDate()" type = "button" class = "btn btn-default">Display Date</button>
-        <p ng-if="dateData!=null">Today is {[{date}]} and the time is {[{time}]}.</p>
+        <p ng-if="dateData!=null">Today is {[{date}]} and the time is {[{time}]} UTC.</p>
     </div>
 
     <p id = "footer">Made with love.</p>
