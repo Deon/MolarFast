@@ -19,16 +19,16 @@
         <div class="form-group">
             <input class="form-control" id="inputFormula" placeholder="Chemical Formula" ng-model = "rawFormula">
         </div>
-        <button type="submit" class="btn btn-default" ng-click = findMolarMass(rawFormula)>Find Molar Mass!</button>
-        <p ng-if="finalMolarMass != null">The Molar Mass for {[{originalFormula}]} is {[{finalMolarMass}]}.</p>
+        <button type="submit" class="btn btn-primary" ng-click = findMolarMass(rawFormula)>Find Molar Mass!</button>
+        <p ng-if="finalMolarMass != null">The Molar Mass for {[{originalFormula}]} is {[{finalMolarMass}]} g/mol.</p>
     </form>
 
 
     <!-- Time stuff. -->
     <div class = "time">
-        <h1>Time at the moment.</h1>
+        <h2>Time at the moment.</h2>
 
-        <button ng-click = "displayDate()" type = "button" class = "btn btn-primary">Display Date</button>
+        <button ng-click = "displayDate()" type = "button" class = "btn btn-default">Display Date</button>
         <p ng-if="time!=null">The time is: {[{time}]}</p>
     </div>
 </body>
