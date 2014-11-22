@@ -5,22 +5,19 @@
 //Declare module
 var app = angular.module('FirstYear', ['ui.bootstrap']);
 
-app.config(function($interpolateProvider) {
-  $interpolateProvider.startSymbol('{[{');
-  $interpolateProvider.endSymbol('}]}');
-})
 
-.controller('MainCtrl', function($scope, $http){
+app.controller('MainCtrl', function($scope, $http){
 
-        $scope.displayDate = function(info){
-            $http({
-                url: "/getTime",
-                headers: {'Content-Type': 'application/json'}
-            })
+    $scope.time = "";
+    $scope.displayDate = function(){
+        $http({
+            url: "/getTime"
+        })
+            .then(function(time){
+                $scope.time  = time.data
+            }
+        )
+    };
 
-                .then(function(time){
-                    info.time  = time.data
-                }
-        }
 
-    }
+});

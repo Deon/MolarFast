@@ -12,7 +12,9 @@ def hello():
 
 @app.route("/getTime")
 def getTime():
-    time = json.dumps(logic.getTime())
+    figured = logic.getTime()
+    app.logger.debug(figured)
+    time = json.dumps(figured)
     return time
 
 if __name__ == ("__main__"):
