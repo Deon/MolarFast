@@ -73,8 +73,8 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4509284" vertical-offset="697" max-vertical-offset="1258">
-              <caret line="51" column="86" selection-start-line="51" selection-start-column="86" selection-end-line="51" selection-end-column="86" />
+            <state vertical-scroll-proportion="0.4960212" vertical-offset="238" max-vertical-offset="1258">
+              <caret line="25" column="69" selection-start-line="25" selection-start-column="69" selection-end-line="25" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -617,7 +617,11 @@
       <created>1416630911312</created>
       <updated>1416630911312</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Bootstrap">
+      <created>1416631340363</created>
+      <updated>1416631340363</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -670,7 +674,8 @@
     <MESSAGE value="css" />
     <MESSAGE value="HTML" />
     <MESSAGE value="Navbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Navbar" />
+    <MESSAGE value="Bootstrap" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bootstrap" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -817,8 +822,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4509284" vertical-offset="697" max-vertical-offset="1258">
-          <caret line="51" column="86" selection-start-line="51" selection-start-column="86" selection-end-line="51" selection-end-column="86" />
+        <state vertical-scroll-proportion="0.4960212" vertical-offset="238" max-vertical-offset="1258">
+          <caret line="25" column="69" selection-start-line="25" selection-start-column="69" selection-end-line="25" selection-end-column="69" />
           <folding />
         </state>
       </provider>
