@@ -29,4 +29,15 @@ app.controller('MainCtrl', function($scope, $http){
         console.log($scope.time);
     };
 
+    $scope.findMolarMass = function(){
+        if (rawFormula == null){
+            $scope.error = "You should fill it in!";
+        }
+
+
+        $http({
+
+        })
+    };
+
 });
