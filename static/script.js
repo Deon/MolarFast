@@ -33,12 +33,15 @@ app.controller('MainCtrl', function($scope, $http){
     };
 
     $scope.findMolarMass = function(model){
-        if (model == null){
+        if (model == null || model.name == null || model == "" || model.name == ""){
             $scope.error = "You should fill it in!";
         }
 
         $scope.originalFormula = model;
-
+        console.log($scope.originalFormula);
+        if (!$scope.originalFormula){
+            $scope.error = "You should fill it in!";
+        }
         $http({
             url: '/postChemFormula',
             method: "POST",
@@ -48,6 +51,10 @@ app.controller('MainCtrl', function($scope, $http){
             .then(function(molarMass){
                 $scope.finalMolarMass = molarMass.data;
                 console.log($scope.finalMolarMass);
+            },
+            function(molarMass){
+                console.log("Error in input.");
+                $scope.error = "Check your formula!";
             }
         );
     };
