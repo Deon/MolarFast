@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a72afed-023e-4e69-aa5a-219d80b7576d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/about.html" afterPath="$PROJECT_DIR$/templates/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.py" afterPath="$PROJECT_DIR$/app.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/style.css" afterPath="$PROJECT_DIR$/static/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SEHackDay.iws" />
@@ -66,7 +63,7 @@
       <file leaf-file-name="script.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1343">
+            <state vertical-scroll-proportion="0.0" vertical-offset="940" max-vertical-offset="1343">
               <caret line="5" column="53" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
               <folding />
             </state>
@@ -76,8 +73,8 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4960212" vertical-offset="238" max-vertical-offset="1173">
-              <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.4509284" vertical-offset="697" max-vertical-offset="1258">
+              <caret line="51" column="86" selection-start-line="51" selection-start-column="86" selection-end-line="51" selection-end-column="86" />
               <folding />
             </state>
           </provider>
@@ -86,7 +83,7 @@
       <file leaf-file-name="about.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.3461537" vertical-offset="286" max-vertical-offset="986">
+            <state vertical-scroll-proportion="1.1923077" vertical-offset="456" max-vertical-offset="986">
               <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
               <folding />
             </state>
@@ -616,7 +613,11 @@
       <created>1416629691002</created>
       <updated>1416629691002</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Navbar">
+      <created>1416630911312</created>
+      <updated>1416630911312</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -668,7 +669,8 @@
     <MESSAGE value="logic" />
     <MESSAGE value="css" />
     <MESSAGE value="HTML" />
-    <option name="LAST_COMMIT_MESSAGE" value="HTML" />
+    <MESSAGE value="Navbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Navbar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -781,14 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1343">
-          <caret line="5" column="53" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
@@ -807,16 +801,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.3461537" vertical-offset="286" max-vertical-offset="986">
+        <state vertical-scroll-proportion="1.1923077" vertical-offset="456" max-vertical-offset="986">
           <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1343">
+          <caret line="5" column="53" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4960212" vertical-offset="238" max-vertical-offset="1173">
-          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.4509284" vertical-offset="697" max-vertical-offset="1258">
+          <caret line="51" column="86" selection-start-line="51" selection-start-column="86" selection-end-line="51" selection-end-column="86" />
           <folding />
         </state>
       </provider>

@@ -47,7 +47,12 @@
         </div>
         <button type="submit" class="btn btn-primary" ng-click = findMolarMass(rawFormula)>Find Molar Mass!</button>
         <p ng-if="finalMolarMass != null">The Molar Mass for {[{originalFormula}]} is {[{finalMolarMass}]} g/mol.</p>
-        <p ng-if="isError != null" class = "bg-danger">Check your formula!</p>
+        <div class = "row">
+            <div class = "col-md-4 col-md-offset-4">
+                <p ng-if="isError != null" class = "bg-danger">Check your formula!</p>
+            </div>
+        </div>
+
     </form>
 
 
