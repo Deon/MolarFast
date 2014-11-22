@@ -11,15 +11,15 @@ elementDict = {"H":1.0079,"He":4.0026,"Li":6.941,"Be":9.0122,"B":10.811,"C":12.0
                "Tl":204.3833,"Pb":207.2,"Bi":208.9804,"Po":209,"At":210,"Rn":222,"Fr":223,"Ra":226,"Ac":227,\
                "Th":232.0381,"Pa":231.0359,"U":238.0289,"Np":237,"Pu":244,"Am":243,"Cm":247,"Bk":247,"Cf":251,\
                "Es":252,"Fm":257,"Md":258,"No":259,"Lr":262,"Rf":261,"Db":262,"Sg":266,"Bh":264,"Hs":277,"Mt":268}
-
+"""
 def main ():
     result = get_molar_mass(raw_input("Please enter chemical formula "))
 
     if result:
-        print "%.2f g/mol"%result
+        print ("%.2f g/mol"%result)
     else:
-        print "Error in Formula"
-
+        print ("Error in Formula")
+"""
 def get_molar_mass (raw_formula):
     if (check_formula(raw_formula)):
         return calculate_molar(parse_formula(raw_formula))
@@ -56,10 +56,9 @@ def calculate_molar (elements):
         mass += elementDict[x]
 
     return mass
-
+"""
 main()
-
-
+"""
 
 
 
