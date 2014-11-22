@@ -42,7 +42,7 @@ def parse_formula(raw_formula):
         elif element and x.islower():
             element += x
         elif x.isdigit():
-            if len(elements) == 0:
+            if len(elements) == 0 and len(element)==0:
                 x_formula = int(x)
             else:
                 multiplier = int(x)
