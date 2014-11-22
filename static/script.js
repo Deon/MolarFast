@@ -11,7 +11,9 @@ app.config(function($interpolateProvider) {
 })
 app.controller('MainCtrl', function($scope, $http){
 
-    $scope.time = "";
+    $scope.time = null;
+    $scope.finalMolarMass = null;
+
     $scope.displayDate = function(){
 
         $http({
@@ -27,6 +29,25 @@ app.controller('MainCtrl', function($scope, $http){
     $scope.testDate = function(){
         $scope.time ='Test time.';
         console.log($scope.time);
+    };
+
+    $scope.findMolarMass = function(model){
+        if (model == null){
+            $scope.error = "You should fill it in!";
+        }
+
+
+        $http({
+            url: '/postChemFormula',
+            method: "POST",
+            data: JSON.stringify({'formula':model}),
+            headers: {'Content-Type': 'application/json'}
+        })
+            .then(function(molarMass){
+                $scope.finalMolarMass = molarMass.data;
+                console.log($scope.finalMolarMass);
+            }
+        );
     };
 
 });

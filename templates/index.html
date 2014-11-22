@@ -12,11 +12,20 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:500,400' rel='stylesheet' type='text/css'>
 </head>
 <body ng-controller="MainCtrl">
-    <h1>First Year Survival Kit - WatIsFirstYear</h1>
-    <p>Hello world!</p>
-    <button ng-click = "displayDate()">Display Date</button>
-    <button ng-click = "testDate()">Test Date</button>
+    <h1>Time at the moment.</h1>
+
+    <button ng-click = "displayDate()" type = "button" class = "btn btn-primary">Display Date</button>
     <p ng-if="time!=null">The time is: {[{time}]}</p>
-    <p ng-if="time!=null">{[{time}]}</p>
+
+
+    <form class="form-inline" role="form">
+        <h1>Molar Mass Calculator</h1>
+        <p>Enter your chemical formula below.</p>
+        <div class="form-group">
+            <input class="form-control" id="inputFormula" placeholder="Chemical Formula" ng-model = "rawFormula">
+        </div>
+        <button type="submit" class="btn btn-default" ng-click = findMolarMass(rawFormula)>Find Molar Mass!</button>
+        <p ng-if="finalMolarMass != null">The Molar Mass is: {[{finalMolarMass}]}</p>
+    </form>
 </body>
 </html>

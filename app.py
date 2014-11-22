@@ -3,6 +3,7 @@ from flask import *
 import os
 import logic
 import json
+import MolarMass
 
 app = Flask(__name__)
 
@@ -16,6 +17,16 @@ def getTime():
     app.logger.debug(figured)
     time = json.dumps(figured)
     return figured
+
+@app.route("/postChemFormula", methods = ["POST"])
+def postChemFormula():
+    post = request.get_json()
+    app.logger.debug(post)
+    formula = post.get('formula')
+    app.logger.debug(formula)
+    molarMass = MolarMass.get_molar_mass(formula)
+    app.logger.debug(molarMass)
+    return str(molarMass)
 
 if __name__ == ("__main__"):
     app.run(debug=True,host='127.0.0.1',port=int(os.environ.get("PORT", 5000)))
