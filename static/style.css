@@ -9,6 +9,7 @@ p{
     margin-top: 10px;
 }
 
-body{
-    background-color: #b3b3b3;
+.navbar {
+    background-color: #d8d8d8;
+    color: #FFFFFF;
 }
