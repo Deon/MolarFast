@@ -3,7 +3,7 @@
  */
 
 //Declare module
-var app = angular.module('FirstYear', []);
+var app = angular.module('FirstYear', ['ui.bootstrap']);
 
 app.config(function($interpolateProvider) {
   $interpolateProvider.startSymbol('{[{');
