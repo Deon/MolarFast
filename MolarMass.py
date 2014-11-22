@@ -12,14 +12,6 @@ elementDict = {"H":1.0079,"He":4.0026,"Li":6.941,"Be":9.0122,"B":10.811,"C":12.0
                "Th":232.0381,"Pa":231.0359,"U":238.0289,"Np":237,"Pu":244,"Am":243,"Cm":247,"Bk":247,"Cf":251,\
                "Es":252,"Fm":257,"Md":258,"No":259,"Lr":262,"Rf":261,"Db":262,"Sg":266,"Bh":264,"Hs":277,"Mt":268}
 
-def main ():
-    result = get_molar_mass(raw_input("Please enter chemical formula "))
-
-    if result:
-        print "%.2f g/mol"%result
-    else:
-        print "Error in Formula"
-
 def get_molar_mass (raw_formula):
     if (check_formula(raw_formula)):
         return calculate_molar(parse_formula(raw_formula))
@@ -30,7 +22,7 @@ def check_formula (raw_formula):
     elements = parse_formula(raw_formula)
     for x in elements:
         try:
-            elementDict [x]
+            elementDict [x[0]]
         except KeyError:
             return False
     return True
@@ -38,26 +30,33 @@ def check_formula (raw_formula):
 def parse_formula(raw_formula):
     elements = []
     element = ""
+    x_formula = 1
+    multiplier = 1
 
     for x in raw_formula:
         if x.isupper():
             if element:
-                elements.append(element)
+                elements.append([element,multiplier*x_formula])
+                multiplier = 1
             element = x
         elif x.islower():
             element += x
-    elements.append(element)
+        elif x.isdigit():
+            if len (elements) == 0:
+                x_formula = int(x)
+            else:
+                multiplier = int(x)
+
+    elements.append([element,multiplier*x_formula])
 
     return elements
 
 def calculate_molar (elements):
     mass = 0
     for x in elements:
-        mass += elementDict[x]
+        mass += elementDict[x[0]]*x[1]
 
     return mass
-
-main()
 
 
 
