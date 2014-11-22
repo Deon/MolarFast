@@ -13,6 +13,7 @@ app.controller('MainCtrl', function($scope, $http){
 
     $scope.time = null;
     $scope.finalMolarMass = null;
+    $scope.originalFormula = null;
 
     $scope.displayDate = function(){
 
@@ -36,6 +37,7 @@ app.controller('MainCtrl', function($scope, $http){
             $scope.error = "You should fill it in!";
         }
 
+        $scope.originalFormula = model;
 
         $http({
             url: '/postChemFormula',
