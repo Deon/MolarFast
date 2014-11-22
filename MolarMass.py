@@ -30,11 +30,16 @@ def check_formula (raw_formula):
 def parse_formula(raw_formula):
     elements = []
     element = ""
-    x_formula = 1
+    x_formula = 1 #Whole equation multiplier
+    x_subformula = 1 # H(CH4) bracket multiplier
+    len_subformula = 0
+    end_subformula = False
     multiplier = 1
 
     for x in raw_formula:
         if x.isupper():
+            if len_subformula and end_subformula == False:
+                len_subformula += 1
             if element:
                 elements.append([element,multiplier*x_formula])
                 multiplier = 1
@@ -46,6 +51,13 @@ def parse_formula(raw_formula):
                 x_formula = int(x)
             else:
                 multiplier = int(x)
+        elif x == "(":
+            len_subformula = 1
+            end_subformula = False
+        elif x == ")":
+            end_subformula = True
+        elif x == "*":
+            continue
         else:
             return [["!",0]]
 
