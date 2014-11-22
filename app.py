@@ -2,6 +2,7 @@ __author__ = 'Owner'
 from flask import *
 import os
 import logic
+import json
 
 app = Flask(__name__)
 
@@ -11,7 +12,8 @@ def hello():
 
 @app.route("/getTime")
 def getTime():
-    return logic.getTime()
+    time = json.dumps(logic.getTime())
+    return time
 
 if __name__ == ("__main__"):
     app.run(debug=True,host='127.0.0.1',port=int(os.environ.get("PORT", 5000)))

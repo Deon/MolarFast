@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="FirstYear">
 <head lang="en">
     <meta charset="UTF-8">
     <title>First Year Survival Kit</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/style.css">
 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
     <script src="/static/script.js"></script>
     <script src="/static/ui-bootstrap-tpls-0.11.2.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Roboto:500,400' rel='stylesheet' type='text/css'>
 </head>
-<body>
-<h1>First Year Survival Kit - WatIsFirstYear</h1>
-<p>Hello world!</p>
+<body ng-controller="MainCtrl">
+    <h1>First Year Survival Kit - WatIsFirstYear</h1>
+    <p>Hello world!</p>
+    <p>{[{displayDate}]}</p>
 </body>
 </html>
