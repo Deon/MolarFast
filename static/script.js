@@ -50,6 +50,9 @@ app.controller('MainCtrl', function($scope, $http){
         })
             .then(function(molarMass){
                 $scope.finalMolarMass = molarMass.data;
+                if ($scope.finalMolarMass == null){
+                    $scope.error = "Check your formula!";
+                }
                 console.log($scope.finalMolarMass);
             },
             function(molarMass){
