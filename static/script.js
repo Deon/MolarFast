@@ -14,6 +14,7 @@ app.controller('MainCtrl', function($scope, $http){
     $scope.time = null;
     $scope.finalMolarMass = null;
     $scope.originalFormula = null;
+    $scope.isError = null;
 
     $scope.displayDate = function(){
 
@@ -34,6 +35,7 @@ app.controller('MainCtrl', function($scope, $http){
 
     $scope.findMolarMass = function(model){
         if (model == null || model.name == null || model == "" || model.name == ""){
+            $scope.isError = true;
             $scope.error = "You should fill it in!";
         }
 
@@ -50,14 +52,18 @@ app.controller('MainCtrl', function($scope, $http){
         })
             .then(function(molarMass){
                 $scope.finalMolarMass = molarMass.data;
+                $scope.isError = null;
                 if ($scope.finalMolarMass == null){
                     $scope.error = "Check your formula!";
+                    $scope.finalMolarMass = null;
                 }
+
                 console.log($scope.finalMolarMass);
             },
             function(molarMass){
                 console.log("Error in input.");
                 $scope.error = "Check your formula!";
+                $scope.finalMolarMass = null;
             }
         );
     };
