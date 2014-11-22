@@ -64,6 +64,7 @@ app.controller('MainCtrl', function($scope, $http){
                 console.log("Error in input.");
                 $scope.error = "Check your formula!";
                 $scope.finalMolarMass = null;
+                $scope.isError = true;
             }
         );
     };
