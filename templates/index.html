@@ -2,7 +2,8 @@
 <html ng-app="FirstYear">
 <head lang="en">
     <meta charset="UTF-8">
-    <title>First Year Survival Kit</title>
+    <title>Molar Mass Calculator</title>
+
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/style.css">
 
@@ -30,7 +31,7 @@
         <h2>Time at the moment.</h2>
 
         <button ng-click = "displayDate()" type = "button" class = "btn btn-default">Display Date</button>
-        <p ng-if="time!=null">The time is: {[{time}]}</p>
+        <p ng-if="dateData!=null">Today is {[{date}]} and the time is {[{time}]}.</p>
     </div>
 </body>
 </html>

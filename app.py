@@ -16,7 +16,8 @@ def getTime():
     figured = logic.getTime()
     app.logger.debug(figured)
     time = json.dumps(figured)
-    return figured
+    app.logger.debug(time)
+    return time
 
 @app.route("/postChemFormula", methods = ["POST"])
 def postChemFormula():
