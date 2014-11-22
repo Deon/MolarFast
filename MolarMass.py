@@ -39,13 +39,15 @@ def parse_formula(raw_formula):
                 elements.append([element,multiplier*x_formula])
                 multiplier = 1
             element = x
-        elif x.islower():
+        elif element and x.islower():
             element += x
         elif x.isdigit():
-            if len (elements) == 0:
+            if len(elements) == 0:
                 x_formula = int(x)
             else:
                 multiplier = int(x)
+        else:
+            return [["!",0]]
 
     elements.append([element,multiplier*x_formula])
 
