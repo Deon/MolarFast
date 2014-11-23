@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:500,400' rel='stylesheet' type='text/css'>
-
+	
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
     <script src="/static/script.js"></script>
     <script src="/static/ui-bootstrap-tpls-0.11.2.min.js"></script>    
@@ -26,7 +28,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href=/>MolarFast</a>
+      <a class="navbar-brand" href="/">MolarFast</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -44,10 +46,10 @@
 	<div class = "container-fluid">
 		<div class = "row">
 			<div class = "col-xs-12 col-md-10 col-md-offset-1">
-				<img class = "img-responsive" src = "http://i.imgur.com/Pw9Ippn.png">
+				<img class = "img-responsive center-block" src = "http://i.imgur.com/Pw9Ippn.png">
 				<p class = "bg-danger">
-				<strong>WARNING</strong>: MolarFast is still in development. If the answer you receive seems wrong, it probably is.
-				We suggest you check with<a href = "http://wolframalpha.com">Wolfram|Alpha</a>.</p>
+				<strong>WARNING</strong>: MolarFast is still in development. If the answer you receive seems wrong, it probably is. 
+					We suggest you check with <a href="http://wolframalpha.com">Wolfram|Alpha</a>.</p>
 			</div>
 		</div>
 
@@ -64,7 +66,7 @@
 				</form>
 				<p ng-if="finalMolarMass != null">The Molar Mass for {[{originalFormula}]} is {[{finalMolarMass}]} g/mol.</p>
 			</div>
-			<div class = "col-md-12 col-lg-4 col-lg-offset-4">
+			<div class = "col-xs-12 col-md-4 col-md-offset-4">
 					<p ng-if="isError != null" class = "bg-danger">Check your formula!</p>
 			</div>
 		</div>
@@ -76,10 +78,11 @@
 
 				<button ng-click = "displayDate()" type = "button" class = "btn btn-default">Display Date</button>
 				<p ng-if="dateData!=null">Today is {[{date}]} and the time is {[{time}]} UTC.</p>
+				<p id = "footer">Made with love.</p>
 			</div>
 		</div>
 		
-		<p id = "footer">Made with love.</p>
+		
 	</div> <!--Container-->
 </body>
 </html>
