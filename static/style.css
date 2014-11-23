@@ -1,12 +1,13 @@
 * {
-    margin-left: 5px;
-    margin-right: 5px;
+
     font-family: Roboto, sans-serif;
     text-align: center;
 }
 
 p{
     margin-top: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
 }
 
 .navbar {
