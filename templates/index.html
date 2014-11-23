@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html ng-app="FirstYear">
-<head lang="en">
+<html ng-app="FirstYear" lang="en">
+<head>
     <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
     <title>Molar Mass Calculator</title>
 
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto:500,400' rel='stylesheet' type='text/css'>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
     <script src="/static/script.js"></script>
-    <script src="/static/ui-bootstrap-tpls-0.11.2.min.js"></script>
-    <link href='http://fonts.googleapis.com/css?family=Roboto:500,400' rel='stylesheet' type='text/css'>
+    <script src="/static/ui-bootstrap-tpls-0.11.2.min.js"></script>    
 </head>
 
 <!--Navbar-->
@@ -39,9 +41,9 @@
 </nav>
 
 <body ng-controller="MainCtrl">    
-	<div class = "container-fluid">>
+	<div class = "container-fluid">
 		<div class = "row">
-			<div class = "col-md-12 col-lg-10 col-lg-offset-1">
+			<div class = "col-xs-10 col-xs-offset-1">
 				<img src = "http://i.imgur.com/Pw9Ippn.png">
 				<p class = "bg-danger">
 				<strong>WARNING</strong>: MolarFast is still in development. If the answer you receive seems wrong, it probably is.
@@ -51,35 +53,33 @@
 
 		<div class = "row">
 			<!-- Molar Mass Calculations -->
-			<div class = "col-md-12 col-lg-6 col-lg-offset-3">
-				<form class="form-inline" role="form">
-					<h1>Molar Mass Calculator</h1>
-					<p>Enter your chemical formula below.</p>
+			<div class = "col-xs-12">
+				<h1>Molar Mass Calculator</h1>
+				<p>Enter your chemical formula below.</p>
+				<form class="form-inline" role="form">					
 					<div class="form-group">
 						<input class="form-control" id="inputFormula" placeholder="Chemical Formula" ng-model = "rawFormula">
 					</div>
 					<button type="submit" class="btn btn-primary" ng-click = findMolarMass(rawFormula)>Find Molar Mass!</button>
-					<p ng-if="finalMolarMass != null">The Molar Mass for {[{originalFormula}]} is {[{finalMolarMass}]} g/mol.</p>
-
 				</form>
+				<p ng-if="finalMolarMass != null">The Molar Mass for {[{originalFormula}]} is {[{finalMolarMass}]} g/mol.</p>
 			</div>
 			<div class = "col-md-12 col-lg-4 col-lg-offset-4">
 					<p ng-if="isError != null" class = "bg-danger">Check your formula!</p>
 			</div>
 		</div>
+		
 		<div class = "row">
 			<!-- Time stuff. -->
-			<div class = "time col-md-12 col-lg-6 col-lg-offset-3">
+			<div class = "time col-xs-12">
 				<h2>Time at the moment.</h2>
 
 				<button ng-click = "displayDate()" type = "button" class = "btn btn-default">Display Date</button>
 				<p ng-if="dateData!=null">Today is {[{date}]} and the time is {[{time}]} UTC.</p>
 			</div>
 		</div>
-
-
-
+		
 		<p id = "footer">Made with love.</p>
-	</div>
+	</div> <!--Container-->
 </body>
 </html>
