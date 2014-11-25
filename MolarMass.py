@@ -65,9 +65,15 @@ def parse_formula(raw_formula):
                     formula = []
 
             elif raw_formula [x] == ")":
-                if x+1 < len(raw_formula) and raw_formula [x+1].isdigit():
-                    x_subformula = int(raw_formula[x+1])
+                if x+1 < len(raw_formula) and raw_formula[x+1].isdigit():
                     x += 1
+                    number = raw_formula[x]
+
+                    while x+1 < len(raw_formula) and raw_formula[x+1].isdigit():
+                        x += 1
+                        number += raw_formula[x]
+
+                    x_subformula = int(number)
                 else:
                     x_subformula = 1
 
