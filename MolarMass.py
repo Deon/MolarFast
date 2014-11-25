@@ -33,12 +33,10 @@ def check_formula(raw_formula):
 def parse_formula(raw_formula):
     raw_formula = "".join(raw_formula.split())
 
-    if raw_formula:
+    if raw_formula and bracket_check(raw_formula):
         formula = []
         elements = []
         x = 0
-
-        #Some sort of bracket checker here
 
         #Checker for the first char
         if raw_formula[x].isdigit():  # Digit
@@ -62,11 +60,9 @@ def parse_formula(raw_formula):
 
         while x < len(raw_formula):  # Goes through each character of raw_formula (except for ones covered already)
             if raw_formula[x] == "(":
-                elements.extend(parse_elements(formula, x_formula))
-                formula = []
-
-            elif raw_formula[x] == "(":
-                formula = []
+                if formula:
+                    elements.extend(parse_elements(formula, x_formula))
+                    formula = []
 
             elif raw_formula [x] == ")":
                 if x+1 < len(raw_formula) and raw_formula [x+1].isdigit():
@@ -162,3 +158,22 @@ def calculate_molar(elements):
     return mass
 
 
+def bracket_check(input_string):
+    brackets = []
+
+    for x in input_string:
+        if x == "(":
+            brackets.extend(x)
+
+        elif x == ")":
+            if len(brackets) == 0:
+                return False
+            elif brackets.pop() == "(":
+                continue
+            else:
+                return False
+
+    if len(brackets) == 0:
+        return True
+    else:
+        return False
