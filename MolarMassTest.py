@@ -1,14 +1,15 @@
 import MolarMass
 
-def main ():
+
+def main():
     userin = True
-    while (userin):
+    while userin:
         userin = input("Please enter chemical formula ")
         result = MolarMass.get_molar_mass(userin)
 
         if result:
-            print ("%.2f g/mol"%result)
+            print("%.2f g/mol" % result)
         else:
-            print ("Error in Formula")
+            print("Error in Formula")
 
-main ()
+main()
