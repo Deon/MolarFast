@@ -12,68 +12,153 @@ elementDict = {"H":1.0079,"He":4.0026,"Li":6.941,"Be":9.0122,"B":10.811,"C":12.0
                "Th":232.0381,"Pa":231.0359,"U":238.0289,"Np":237,"Pu":244,"Am":243,"Cm":247,"Bk":247,"Cf":251,\
                "Es":252,"Fm":257,"Md":258,"No":259,"Lr":262,"Rf":261,"Db":262,"Sg":266,"Bh":264,"Hs":277,"Mt":268}
 
-def get_molar_mass (raw_formula):
-    if (check_formula(raw_formula)):
+
+def get_molar_mass(raw_formula):
+    if check_formula(raw_formula):
         return calculate_molar(parse_formula(raw_formula))
     else:
         return None
 
-def check_formula (raw_formula):
+
+def check_formula(raw_formula):
     elements = parse_formula(raw_formula)
     for x in elements:
         try:
-            elementDict [x[0]]
+            elementDict[x[0]]
         except KeyError:
             return False
     return True
 
+
 def parse_formula(raw_formula):
+    raw_formula = "".join(raw_formula.split())
+
+    if raw_formula:
+        formula = []
+        elements = []
+        x = 0
+
+        #Some sort of bracket checker here
+
+        #Checker for the first char
+        if raw_formula[x].isdigit():  # Digit
+            number = raw_formula[x]
+
+            while x+1 < len(raw_formula) and raw_formula[x+1].isdigit():
+                x += 1
+                number += raw_formula[x]
+
+            x_formula = int(number)
+
+        elif raw_formula[x].isalpha():  # Letter
+            formula += raw_formula[x]
+            x_formula = 1
+        elif raw_formula[x] == "(":  # Open Bracket
+            x_formula = 1
+        else:  # Anything else
+            return [["!", 0]]
+
+        x += 1
+
+        while x < len(raw_formula):  # Goes through each character of raw_formula (except for ones covered already)
+            if raw_formula[x] == "(":
+                elements.extend(parse_elements(formula, x_formula))
+                formula = []
+
+            elif raw_formula[x] == "(":
+                formula = []
+
+            elif raw_formula [x] == ")":
+                if x+1 < len(raw_formula) and raw_formula [x+1].isdigit():
+                    x_subformula = int(raw_formula[x+1])
+                    x += 1
+                else:
+                    x_subformula = 1
+
+                elements.extend(parse_elements(formula, x_formula*x_subformula))
+                formula = []
+
+            elif raw_formula[x] == "*":
+                elements.extend(parse_elements(formula, x_formula))
+                formula = []
+
+                if x+1 < len(raw_formula) and raw_formula[x+1].isdigit():
+                    x += 1
+                    number = raw_formula[x]
+
+                    while x+1 < len(raw_formula) and raw_formula[x+1].isdigit():
+                        x += 1
+                        number += raw_formula [x]
+
+                    x_formula = int(number)
+
+                else:
+                    x_formula = 1
+
+            elif raw_formula[x].isalpha() or raw_formula[x].isdigit():
+                formula += raw_formula[x]
+
+            else:
+                return [["!", 0]]
+
+            x += 1
+
+        if formula:
+            elements.extend(parse_elements(formula, x_formula))
+
+        return elements
+    else:
+        return [["!", 0]]
+
+'''
+Called by parse_formula to return arrays of element names and their multiplier.
+'''
+
+def parse_elements (formula, x_formula):
     elements = []
     element = ""
-    x_formula = 1 #Whole equation multiplier
-    x_subformula = 1 # H(CH4) bracket multiplier
-    len_subformula = 0
-    end_subformula = False
     multiplier = 1
+    x = 0
 
-    for x in raw_formula:
-        if x.isupper():
-            if len_subformula and end_subformula == False:
-                len_subformula += 1
+    while x < len(formula):
+        if formula[x].isupper():  # Capital Letter
             if element:
                 elements.append([element,multiplier*x_formula])
                 multiplier = 1
-            element = x
-        elif element and x.islower():
-            element += x
-        elif x.isdigit():
-            if len(elements) == 0 and len(element)==0:
-                x_formula = int(x)
-            else:
-                multiplier = int(x)
-        elif x == "(":
-            len_subformula = 1
-            end_subformula = False
-        elif x == ")":
-            end_subformula = True
-        elif x == "*":
-            continue
+
+            element = formula[x]
+
+        elif element and formula[x].islower():  # Lower Case
+            try:  # Must be uppercase letter before lowercase letter
+                if formula[x-1].isupper():
+                    element += formula[x]
+                else:
+                    return [["!",0]]
+            except IndexError:
+                return [["!",0]]
+
+        elif formula[x].isdigit(): #Digit
+            number = formula[x]
+
+            while x+1 < len(formula) and formula[x+1].isdigit():
+                x += 1
+                number += formula [x]
+
+            multiplier = int(number)
+
         else:
             return [["!",0]]
-
+        x += 1
     elements.append([element,multiplier*x_formula])
 
     return elements
 
-def calculate_molar (elements):
+
+def calculate_molar(elements):
     mass = 0
     for x in elements:
         mass += elementDict[x[0]]*x[1]
 
     return mass
-
-
-
-
 
 
