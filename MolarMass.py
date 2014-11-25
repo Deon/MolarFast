@@ -33,10 +33,12 @@ def check_formula(raw_formula):
 def parse_formula(raw_formula):
     raw_formula = "".join(raw_formula.split())
 
-    if raw_formula and bracket_check(raw_formula):
+    if raw_formula:
         formula = []
         elements = []
         x = 0
+
+        #Some sort of bracket checker here
 
         #Checker for the first char
         if raw_formula[x].isdigit():  # Digit
@@ -60,12 +62,14 @@ def parse_formula(raw_formula):
 
         while x < len(raw_formula):  # Goes through each character of raw_formula (except for ones covered already)
             if raw_formula[x] == "(":
-                if formula:
-                    elements.extend(parse_elements(formula, x_formula))
-                    formula = []
+                elements.extend(parse_elements(formula, x_formula))
+                formula = []
 
-            elif raw_formula[x] == ")":
-                if x+1 < len(raw_formula) and raw_formula[x+1].isdigit():
+            elif raw_formula[x] == "(":
+                formula = []
+
+            elif raw_formula [x] == ")":
+                if x+1 < len(raw_formula) and raw_formula [x+1].isdigit():
                     x_subformula = int(raw_formula[x+1])
                     x += 1
                 else:
@@ -143,9 +147,9 @@ def parse_elements (formula, x_formula):
             multiplier = int(number)
 
         else:
-            return [["!", 0]]
+            return [["!",0]]
         x += 1
-    elements.append([element, multiplier*x_formula])
+    elements.append([element,multiplier*x_formula])
 
     return elements
 
@@ -156,24 +160,5 @@ def calculate_molar(elements):
         mass += elementDict[x[0]]*x[1]
 
     return mass
-
-
-def bracket_check(input_string):
-    brackets = []
-
-    for x in input_string:
-        if x == "(":
-            brackets.extend(x)
-
-        elif x == ")":
-            if brackets.pop() == "(":
-                continue
-            else:
-                return False
-
-    if len(brackets) == 0:
-        return True
-    else:
-        return False
 
 
