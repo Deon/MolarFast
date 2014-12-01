@@ -48,10 +48,9 @@
 			<div class = "col-xs-12 col-md-10 col-md-offset-1">
 				<img class = "img-responsive center-block" src = "http://i.imgur.com/Pw9Ippn.png">
 				<p class = "bg-danger">
-				<strong>WARNING</strong>: MolarFast is still in development. If the answer you receive seems wrong, it probably is.
+				<strong>WARNING</strong>: MolarFast is still in development.
 					As of now, most chemical formulas should work, with the exception of hydrates. Issues can be found/reported on
-					<a href = "http://github.com/DeonHua/MolarFast/issues">GitHub</a>.
-					We suggest you check with <a href="http://wolframalpha.com">Wolfram|Alpha</a>.</p>
+					<a href = "http://github.com/DeonHua/MolarFast/issues">GitHub</a>.</p>
 			</div>
 		</div>
 
@@ -59,7 +58,10 @@
 			<!-- Molar Mass Calculations -->
 			<div class = "col-xs-12">
 				<h1>Molar Mass Calculator</h1>
-				<p>Enter your chemical formula below.</p>
+				<h2><small>Enter your chemical formula below.</small></h2>
+				
+				<p>MolarFast takes unformatted input - no subscripts are required.</p>
+				<p>For Al(NO<sub>2</sub>)<sub>3</sub>, simply put Al(NO2)3!</p>
 				<form class="form-inline" role="form">					
 					<div class="form-group">
 						<input class="form-control" id="inputFormula" placeholder="Chemical Formula" ng-model = "rawFormula">
@@ -73,16 +75,7 @@
 			</div>
 		</div>
 		
-		<div class = "row">
-			<!-- Time stuff. -->
-			<div class = "time col-xs-12">
-				<h2>Time at the moment.</h2>
-
-				<button ng-click = "displayDate()" type = "button" class = "btn btn-default">Display Date</button>
-				<p ng-if="dateData!=null">Today is {[{date}]} and the time is {[{time}]} UTC.</p>
-				<p id = "footer">Made with love.</p>
-			</div>
-		</div>
+		<p id = "footer">Made with love.</p>
 		
 		
 	</div> <!--Container-->
