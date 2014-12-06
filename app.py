@@ -1,8 +1,6 @@
 __author__ = 'Owner'
 from flask import *
 import os
-import logic
-import json
 import MolarMass
 
 app = Flask(__name__)
@@ -14,14 +12,6 @@ def hello():
 @app.route("/about.html")
 def about():
     return render_template("about.html")
-
-@app.route("/getTime/")
-def getTime():
-    figured = logic.getTime()
-    app.logger.debug(figured)
-    time = json.dumps(figured)
-    app.logger.debug(time)
-    return time
 
 @app.route("/postChemFormula", methods = ["POST"])
 def postChemFormula():

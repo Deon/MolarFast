@@ -17,21 +17,6 @@ app.controller('MainCtrl', function($scope, $http){
     $scope.originalFormula = null;
     $scope.isError = null;
 
-    $scope.displayDate = function(){
-
-        $http({
-            url: '/getTime/'
-        })
-            .then(function(time){
-                $scope.dateData = time.data;
-                console.log($scope.dateData);
-                $scope.date = $scope.dateData[0];
-                $scope.time = $scope.dateData[1];
-            }
-        );
-    };
-
-
     $scope.findMolarMass = function(model){
         $scope.originalFormula = model;
         console.log($scope.originalFormula);
@@ -50,7 +35,6 @@ app.controller('MainCtrl', function($scope, $http){
                 headers: {'Content-Type': 'application/json'}
             })
                 .success(function (molarMass) {
-                    console.log(molarMass);
                     if (molarMass === ""){
                         $scope.isError = true;
                         $scope.error = "Check your formula!";
