@@ -7,7 +7,7 @@ p{
     margin-top: 10px;
 	margin-left: 5px;
 	margin-right: 5px;
-	text-align: center;
+	text-align: inherit;
 }
 
 .navbar {
@@ -38,11 +38,17 @@ div.about{
 	text-align: center;
 }
 
+div.row.about {
+	text-align: left;
+}
+
+
 #warning {
 	border-radius: 3px;
 	background-color: rgba(224, 98, 98, 0.35);
 	padding-left: 4px;
 	padding-right: 4px;
+	text-align: center;
 }
 
 .navbar-brand{
