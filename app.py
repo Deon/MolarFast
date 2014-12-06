@@ -30,9 +30,12 @@ def postChemFormula():
     formula = post.get('formula')
     app.logger.debug(formula)
     molarMass = MolarMass.get_molar_mass(formula)
-    outputMolarMass = "%.2f" %molarMass
-    app.logger.debug(outputMolarMass)
-    return outputMolarMass
+    if molarMass:
+        outputMolarMass = "%.2f" %molarMass
+        app.logger.debug(outputMolarMass)
+        return outputMolarMass
+    else:
+        return ""
 
 if __name__ == ("__main__"):
     app.run(debug=True,host='0.0.0.0',port=int(os.environ.get("PORT", 5000)))

@@ -62,6 +62,7 @@
 				
 				<p>MolarFast takes unformatted input - no subscripts are required.</p>
 				<p>For Al(NO<sub>2</sub>)<sub>3</sub>, simply put Al(NO2)3!</p>
+
 				<form class="form-inline" role="form">					
 					<div class="form-group">
 						<input class="form-control" id="inputFormula" placeholder="Chemical Formula" ng-model = "rawFormula">
@@ -70,9 +71,11 @@
 				</form>
 				<p ng-if="finalMolarMass != null">The Molar Mass for {[{originalFormula}]} is {[{finalMolarMass}]} g/mol.</p>
 			</div>
+
 			<div class = "col-xs-12 col-md-4 col-md-offset-4">
-					<p ng-if="isError != null" class = "bg-danger">Check your formula!</p>
+					<p ng-if="isError != null" class = "bg-danger">{[{error}]}</p>
 			</div>
+
 		</div>
 		
 		<p id = "footer">Made with love.</p>
@@ -80,6 +83,7 @@
 		
 	</div> <!--Container-->
 </body>
+
 <!-- Tracking -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -89,6 +93,6 @@
 
   ga('create', 'UA-57076335-1', 'auto');
   ga('send', 'pageview');
-
 </script>
+
 </html>
