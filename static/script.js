@@ -44,31 +44,35 @@ app.controller('MainCtrl', function($scope, $http){
 
         $scope.originalFormula = model;
         console.log($scope.originalFormula);
-        if ($scope.originalFormula == null){
-            $scope.error = "You should fill it in!";
-        }
-        $http({
-            url: '/postChemFormula',
-            method: "POST",
-            data: JSON.stringify({'formula':model}),
-            headers: {'Content-Type': 'application/json'}
-        })
-            .success(function(molarMass){
-                $scope.finalMolarMass = molarMass;
-                $scope.isError = null;
-                if ($scope.finalMolarMass == null){
-                    $scope.error = "Check your formula!";
-                }
 
-                console.log($scope.finalMolarMass);
+        if ($scope.originalFormula === null || $scope.originalFormula === undefined){
+            $scope.error = "You should fill it in!";
+            console.log("undefined input");
+        }
+        else {
+            $http({
+                url: '/postChemFormula',
+                method: "POST",
+                data: JSON.stringify({'formula': model}),
+                headers: {'Content-Type': 'application/json'}
             })
-            .error(function(molarMass){
-                console.log(molarMass);
-                console.log("Error in input.");
-                $scope.error = "Check your formula!";
-                $scope.finalMolarMass = null;
-                $scope.isError = true;
-            });
+                .success(function (molarMass) {
+                    $scope.finalMolarMass = molarMass;
+                    $scope.isError = null;
+                    if ($scope.finalMolarMass == null) {
+                        $scope.error = "Check your formula!";
+                    }
+
+                    console.log($scope.finalMolarMass);
+                })
+                .error(function (molarMass) {
+                    console.log(molarMass);
+                    console.log("Error in input.");
+                    $scope.error = "Check your formula!";
+                    $scope.finalMolarMass = null;
+                    $scope.isError = true;
+                });
+        }
     };
 
 });
