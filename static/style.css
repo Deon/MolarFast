@@ -37,3 +37,6 @@ div.about{
 	text-align: center;
 }
 
+.bg-danger{
+	border-radius: 3px;
+}
