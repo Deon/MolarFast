@@ -43,12 +43,10 @@ div.row.about {
 }
 
 
-#warning {
+.bg-danger {
 	border-radius: 3px;
-	background-color: rgba(224, 98, 98, 0.35);
-	padding-left: 4px;
-	padding-right: 4px;
 	text-align: center;
+	padding: 10px 4px 10px 4px;
 }
 
 .navbar-brand{
