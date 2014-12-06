@@ -7,6 +7,7 @@ p{
     margin-top: 10px;
 	margin-left: 5px;
 	margin-right: 5px;
+	text-align: center;
 }
 
 .navbar {
@@ -37,6 +38,12 @@ div.about{
 	text-align: center;
 }
 
-.bg-danger{
+#warning {
 	border-radius: 3px;
+	background-color: rgba(224, 98, 98, 0.35);
+	padding: 2px;
+}
+
+.navbar-brand{
+	color: #888888;
 }
