@@ -41,7 +41,8 @@ div.about{
 #warning {
 	border-radius: 3px;
 	background-color: rgba(224, 98, 98, 0.35);
-	padding: 2px;
+	padding-left: 4px;
+	padding-right: 4px;
 }
 
 .navbar-brand{
