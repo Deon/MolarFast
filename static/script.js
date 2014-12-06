@@ -36,9 +36,10 @@ app.controller('MainCtrl', function($scope, $http){
         $scope.originalFormula = model;
         console.log($scope.originalFormula);
 
-        if ($scope.originalFormula === null || $scope.originalFormula === undefined){
+        if ($scope.originalFormula === null || $scope.originalFormula === undefined || $scope.originalFormula === ""){
             $scope.error = "You should fill it in!";
             $scope.isError = true;
+            $scope.originalFormula = null;
             console.log("undefined input");
         }
         else {
