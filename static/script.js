@@ -1,7 +1,3 @@
-/**
- * Created by Owner on 11/21/2014.
- */
-
 //Declare module
 var app = angular.module('FirstYear', ['ui.bootstrap']);
 
