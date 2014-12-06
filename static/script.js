@@ -8,7 +8,8 @@ var app = angular.module('FirstYear', ['ui.bootstrap']);
 app.config(function($interpolateProvider) {
   $interpolateProvider.startSymbol('{[{');
   $interpolateProvider.endSymbol('}]}');
-})
+});
+
 app.controller('MainCtrl', function($scope, $http){
 
     $scope.time = null;
@@ -43,7 +44,7 @@ app.controller('MainCtrl', function($scope, $http){
 
         $scope.originalFormula = model;
         console.log($scope.originalFormula);
-        if (!$scope.originalFormula){
+        if ($scope.originalFormula == null){
             $scope.error = "You should fill it in!";
         }
         $http({
@@ -52,23 +53,22 @@ app.controller('MainCtrl', function($scope, $http){
             data: JSON.stringify({'formula':model}),
             headers: {'Content-Type': 'application/json'}
         })
-            .then(function(molarMass){
-                $scope.finalMolarMass = molarMass.data;
+            .success(function(molarMass){
+                $scope.finalMolarMass = molarMass;
                 $scope.isError = null;
                 if ($scope.finalMolarMass == null){
                     $scope.error = "Check your formula!";
-                    $scope.finalMolarMass = null;
                 }
 
                 console.log($scope.finalMolarMass);
-            },
-            function(molarMass){
+            })
+            .error(function(molarMass){
+                console.log(molarMass);
                 console.log("Error in input.");
                 $scope.error = "Check your formula!";
                 $scope.finalMolarMass = null;
                 $scope.isError = true;
-            }
-        );
+            });
     };
 
 });
