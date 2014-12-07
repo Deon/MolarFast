@@ -79,3 +79,8 @@ div.about{
 .navbar-nav{
 	font-size: 1.1em;
 }
+
+.panel-body{
+  padding-left: 5px;
+  padding-right: 5px;
+}
