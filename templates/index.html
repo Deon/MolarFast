@@ -56,12 +56,13 @@
             <span><strong>WARNING</strong>: MolarFast is still in development.
                 As of now, most chemical formulas should work, with the exception of hydrates.</span>
             </p>		
+				<br>
 				<form class="form-inline" role="form">					
 					<div class="form-group">
 						<input class="form-control" id="inputFormula" placeholder="Chemical Formula" ng-model = "rawFormula">						
 					</div>	
 					<button type="submit" class="btn btn-primary btn-lg" id = "submit" ng-click = findMolarMass(rawFormula)>Find Molar Mass!</button>
-					<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" data-html="true" title="MolarFast takes unformatted input, but make sure you capitalize properly. For Al(NO<sub>2</sub>)<sub>3</sub>, simply put Al(NO2)3!">Help!</button>
+					<button type="button" class="btn btn-default"  id = "help" data-toggle="tooltip" data-placement="bottom" data-html="true" title="MolarFast takes unformatted input, but make sure you capitalize properly. For 							Al(NO<sub>2</sub>)<sub>3</sub>, simply put Al(NO2)3!">Help!</button>
 				</form>
 					
 				<br>
