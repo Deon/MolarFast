@@ -21,9 +21,15 @@ p{
 	text-align: center;
 }
 
-.btn-primary {
-  .buttonBackground(#0074D9, #00569e); //(button, hover)
+
+.btn{
+	background-color: #0074d9;
 }
+
+.btn:hover{
+	background-color: #00569e;
+}
+
 
 h1{
 	margin-top: 0px;
