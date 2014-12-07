@@ -24,12 +24,18 @@ p{
 
 .btn{
 	background-color: #0074d9;
+	height: 50px;
 }
 
 .btn:hover{
 	background-color: #00569e;
 }
 
+#inputFormula{
+	height: 50px;
+	font-size: 20px;
+	min-width: 300px;
+}
 
 h1{
 	margin-top: 0px;
