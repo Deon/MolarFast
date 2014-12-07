@@ -84,3 +84,11 @@ div.about{
   padding-left: 5px;
   padding-right: 5px;
 }
+
+#aTitle{
+  text-decoration: none;
+}
+
+#aTitle:hover{
+  color: #777;
+}
