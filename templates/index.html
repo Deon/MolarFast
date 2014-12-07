@@ -55,15 +55,13 @@
                 <p class = "bg-danger">
             <span><strong>WARNING</strong>: MolarFast is still in development.
                 As of now, most chemical formulas should work, with the exception of hydrates.</span>
-            </p>
-				<p>MolarFast takes unformatted input, but make sure you capitalize properly. For Al(NO<sub>2</sub>)<sub>3</sub>, simply put Al(NO2)3!</p>
-				
-
+            </p>		
 				<form class="form-inline" role="form">					
 					<div class="form-group">
 						<input class="form-control" id="inputFormula" placeholder="Chemical Formula" ng-model = "rawFormula">						
 					</div>	
-					<button type="submit" class="btn btn-primary btn-lg" ng-click = findMolarMass(rawFormula)>Find Molar Mass!</button>
+					<button type="submit" class="btn btn-primary btn-lg" id = "submit" ng-click = findMolarMass(rawFormula)>Find Molar Mass!</button>
+					<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" data-html="true" title="MolarFast takes unformatted input, but make sure you capitalize properly. For Al(NO<sub>2</sub>)<sub>3</sub>, simply put Al(NO2)3!">Help!</button>
 				</form>
 					
 				<br>
@@ -134,7 +132,11 @@
 
 	</div> <!--Container-->
 </body>
-
+<script>
+	$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
 	<!-- UserVoice JavaScript SDK (only needed once on a page) -->
 	<script>(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/LaYDD0JgxtLDaixbL3IGg.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})()</script>
 

@@ -23,12 +23,14 @@ p{
 
 
 .btn{
-	background-color: #0074d9;
 	height: 50px;
 	border-radius: 0px;
 }
 
-.btn:hover{
+#submit{
+	background-color: #0074d9;
+}
+#submit:hover{
 	background-color: #00569e;
 }
 
