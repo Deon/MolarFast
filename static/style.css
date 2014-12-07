@@ -25,6 +25,7 @@ p{
 .btn{
 	background-color: #0074d9;
 	height: 50px;
+	border-radius: 0px;
 }
 
 .btn:hover{
@@ -35,6 +36,7 @@ p{
 	height: 50px;
 	font-size: 20px;
 	min-width: 300px;
+	border-radius: 0px;
 }
 
 h1{
@@ -55,17 +57,23 @@ div.about{
 	text-align: center;
 }
 
-div.row.about {
-	text-align: left;
-}
-
 
 .bg-danger {
-	border-radius: 3px;
+	border-radius: 2px;
 	text-align: center;
 	padding: 10px 4px 10px 4px;
 }
 
 .navbar-brand{
 	color: #888888;
+	font-size: 1.4em;
+}
+
+.navbar{
+	width: 100%;
+	border-radius: 0px;
+}
+
+.navbar-nav{
+	font-size: 1.1em;
 }
