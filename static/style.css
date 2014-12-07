@@ -10,6 +10,10 @@ p{
 	text-align: inherit;
 }
 
+#button{
+    background-color: #0074D9;
+}
+
 .navbar {
     background-color: #d8d8d8;
     color: #FFFFFF;
