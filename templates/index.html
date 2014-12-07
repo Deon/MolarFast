@@ -58,7 +58,7 @@
             </p>
 				<p>MolarFast takes unformatted input, but make sure you capitalize properly. For Al(NO<sub>2</sub>)<sub>3</sub>, simply put Al(NO2)3!</p>
 				
-				<div class = " col-md-8 col-md-offset-2">
+
 				<form class="form-inline" role="form">					
 					<div class="form-group">
 						<input class="form-control" id="inputFormula" placeholder="Chemical Formula" ng-model = "rawFormula">						
@@ -66,7 +66,7 @@
 					<button type="submit" class="btn btn-primary btn-lg" ng-click = findMolarMass(rawFormula)>Find Molar Mass!</button>
 				</form>
 					
-				</div>
+
 				<p ng-if="finalMolarMass != null && !isError">The Molar Mass for {[{originalFormula}]} is {[{finalMolarMass}]} g/mol.</p>
 			</div>
 
