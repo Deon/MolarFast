@@ -77,31 +77,37 @@
 		<div class = "row" style="margin-top:20px;">
             <!-- Useful Constants -->
             <div class="col-xs-12 col-md-8 col-md-offset-2">
-                <h2>Constants</h2>
-                <table class="table table-striped">
-                    <tr>
-                        <th style="text-align:center">Avogadro's Number</th>
-                        <td style="text-align:center">6.02214 x 10<sup>23</sup> mol<sup>–1</sup></td>
-                    </tr>
-                    <tr>
-                        <th style="text-align:center">Faraday Constant</th>
-                        <td style="text-align:center">96485.31 C/mol</td>
-                    </tr>
-                    <tr>
-                        <th style="text-align:center">Boltzmann's Constant</th>
-                        <td style="text-align:center">1.38066 x 10<sup>–23</sup> J/K</td>
-                    </tr>
-				</table>
 				<div class="panel-group" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                      <a class="collapsed" data-toggle="collapse"  href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" id = "aTitle">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">Constants</h4>
+                        </div>
+                      </a>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                          <div class="panel-body">
+                            <table class="table table-striped">
+                                <tr>
+                                    <th style="text-align:center">Avogadro's Number</th>
+                                    <td style="text-align:center">6.02214 x 10<sup>23</sup> mol<sup>–1</sup></td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align:center">Faraday Constant</th>
+                                    <td style="text-align:center">96485.31 C/mol</td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align:center">Boltzmann's Constant</th>
+                                    <td style="text-align:center">1.38066 x 10<sup>–23</sup> J/K</td>
+                                </tr>
+                            </table>
+                          </div>
+                        </div>
+                    </div>
                   
 				  <div class="panel panel-default">
                       <a class="collapsed" data-toggle="collapse"  href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" id = "aTitle">
 					    <div class="panel-heading" role="tab" id="headingOne">
-					        <h4 class="panel-title">
-
-						Gas Constants (R)
-
-					        </h4>
+					        <h4 class="panel-title">Gas Constants (R)</h4>
 					    </div>
                       </a>
 					<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
@@ -131,11 +137,7 @@
 				  <div class="panel panel-default">
                     <a class="collapsed" data-toggle="collapse"  href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id = "aTitle">
 					    <div class="panel-heading" role="tab" id="headingTwo">
-					        <h4 class="panel-title">
-
-						    Standard Temperatures and Pressures
-
-					        </h4>
+					        <h4 class="panel-title">Standard Temperatures and Pressures</h4>
 					    </div>
                     </a>
 					<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
