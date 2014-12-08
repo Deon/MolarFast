@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/style.css">
+
 	<link href='http://fonts.googleapis.com/css?family=Roboto:500,400' rel='stylesheet' type='text/css'>
 	
 	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -20,6 +21,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
     <script src="/static/script.js"></script>
     <script src="/static/ui-bootstrap-tpls-0.11.2.min.js"></script>
+    <script type="text/javascript" src="/static/tempChange.js"> </script>
 </head>
 	
 <nav class="navbar navbar-default" role="navigation">
@@ -52,6 +54,40 @@
         <div class = "row">
             <div class = "col-xs-12 col-md-8 col-md-offset-2">
 				<img class = "img-responsive center-block" src = "/static/mf.png">
+
+                <h3> Temperature Conversion</h3>
+                <form class="form-inline" role="form">
+                    <div class="form-group">
+                            <input class="form-control" id="inputField" placeholder="Temperature">
+                    </div>
+
+                    <select id = "unit1" class="form-control">
+                    <option value="c">°C</option>
+                    <option value="k">K</option>
+                    <option value="f">°F</option>
+                    <option value="r">°R</option>
+                    </select>
+
+                    <span class="sr-only">into</span> <!--For Screen Readers-->
+                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true" id="arrow"> </span>
+
+                    <select id = "unit2" class="form-control">
+                    <option value="c">°C</option>
+                    <option value="k">K</option>
+                    <option value="f">°F</option>
+                    <option value="r">°R</option>
+                    </select>
+
+                    <button type="submit" class="btn btn-primary btn-lg" id = "submit" onclick="tempChange();return false;">Convert!</button>
+                    <button type="button" class="btn btn-default"  id = "help" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Simply enter the temperature and the unit it is in and select the unit you want it to be in.">Help!</button>
+                </form>
+                <div class = "col-xs-12 col-md-8 col-md-offset-2">
+                    <p id="tempOut"></p>
+                </div>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-xs-12 col-md-8 col-md-offset-2">
 
                 <h3>Unit Conversion Factors</h3>
                 <div class="table-responsive">
@@ -166,15 +202,15 @@
             <div class="panel-group" role="tablist" aria-multiselectable="true">
                 <div class="panel panel-default">
                     <a class="collapsed" data-toggle="collapse"  href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" id = "aTitle">
-                        <div class="panel-heading" role="tab" id="headingTwo">
+                        <div class="panel-heading" role="tab" id="headingOne">
                           <h4 class="panel-title">
 
-                              Temperature Conversion
+                              Temperature Equations
 
                           </h4>
                         </div>
                     </a>
-                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                       <div class="panel-body">
                         <table class="table table-striped">
                           <tr>

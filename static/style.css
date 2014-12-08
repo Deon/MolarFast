@@ -1,5 +1,4 @@
 * {
-
     font-family: Roboto, sans-serif;
 }
 
@@ -34,11 +33,27 @@ p{
 	background-color: #00569e;
 }
 
-#inputFormula{
+#inputField{
 	height: 50px;
 	font-size: 20px;
-	min-width: 300px;
+	min-width: 100px;
 	border-radius: 0px;
+}
+
+#unit1{
+	height: 50px;
+	font-size: 20px;
+	border-radius: 0px;
+}
+
+#unit2{
+	height: 50px;
+	font-size: 20px;
+	border-radius: 0px;
+}
+
+#arrow{
+    font-size: 20px;
 }
 
 h1{

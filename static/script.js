@@ -1,3 +1,4 @@
+$(function () { $("[data-toggle='tooltip']").tooltip(); });
 //Declare module
 var app = angular.module('FirstYear', ['ui.bootstrap']);
 
