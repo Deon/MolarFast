@@ -44,21 +44,18 @@ p{
 	height: 50px;
 	font-size: 20px;
 	border-radius: 0px;
-    max-width: 80px;
-    display: inline;
+    padding-top: 10px;
 }
 
 #unit2{
 	height: 50px;
 	font-size: 20px;
 	border-radius: 0px;
-    max-width: 80px;
-    display:inline;
+
 }
 
 #into{
     font-size: 20px;
-    display: inline;
 }
 
 h1{
@@ -114,6 +111,4 @@ div.about{
   color: #777;
 }
 
-#temperature{
-  padding-bottom: 10px;
-}
+
