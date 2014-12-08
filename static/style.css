@@ -87,6 +87,7 @@ div.about{
 
 #aTitle{
   text-decoration: none;
+  color: black;
 }
 
 #aTitle:hover{
