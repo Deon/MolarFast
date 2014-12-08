@@ -15,3 +15,5 @@ MolarFast was created at the University of Waterloo's Software Engineering HackD
 and <a href = "http://github.com/DeonHua">Deon Hua</a>, a Software Engineering student.
 You can find the source code on our <a href = "http://github.com/DeonHua/MolarFast">GitHub</a>.</p>
 <p id = "footer">Made with love.</p>
+
+Released under the GPL v3.0 license.
