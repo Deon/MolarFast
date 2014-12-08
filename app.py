@@ -25,7 +25,7 @@ def postChemFormula():
     app.logger.debug(formula)
     molarMass = MolarMass.get_molar_mass(formula)
     if molarMass:
-        outputMolarMass = "%.2f" %molarMass
+        outputMolarMass = "%.3f" %molarMass
         app.logger.debug(outputMolarMass)
         return outputMolarMass
     else:
