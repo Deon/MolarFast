@@ -29,11 +29,12 @@ p{
 #submit{
 	background-color: #0074d9;
 }
+
 #submit:hover{
 	background-color: #00569e;
 }
 
-#inputField{
+.inputField{
 	height: 50px;
 	font-size: 20px;
 	min-width: 100px;
@@ -44,18 +45,21 @@ p{
 	height: 50px;
 	font-size: 20px;
 	border-radius: 0px;
-    padding-top: 10px;
+    max-width: 80px;
+    display:inline;
 }
 
 #unit2{
 	height: 50px;
 	font-size: 20px;
 	border-radius: 0px;
-
+    max-width: 80px;
+    display:inline;
 }
 
 #into{
     font-size: 20px;
+    text-align: center;
 }
 
 h1{
@@ -109,6 +113,14 @@ div.about{
 
 #aTitle:hover{
   color: #777;
+}
+
+#temperature{
+  display:inline;
+}
+
+#tempInput{
+
 }
 
 
