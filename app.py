@@ -1,4 +1,4 @@
-__author__ = 'Owner'
+__author__ = 'Deon Hua and Timothy Mui'
 from flask import *
 import os
 import MolarMass
@@ -6,8 +6,12 @@ import MolarMass
 app = Flask(__name__)
 
 @app.route("/")
-def hello():
+def home():
     return render_template("index.html")
+
+@app.route("/conversion.html")
+def conversion():
+    return render_template("conversion.html")
 
 @app.route("/about.html")
 def about():

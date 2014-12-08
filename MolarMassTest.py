@@ -1,3 +1,5 @@
+__author__ = 'Deon Hua and Timothy Mui'
+
 import MolarMass
 
 def main ():
