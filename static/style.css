@@ -42,12 +42,14 @@ p{
 
 #unit1{
 	height: 50px;
+    min-width: 80px;
 	font-size: 20px;
 	border-radius: 0px;
 }
 
 #unit2{
 	height: 50px;
+    min-width: 80px;
 	font-size: 20px;
 	border-radius: 0px;
 }
