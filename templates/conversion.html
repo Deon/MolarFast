@@ -60,9 +60,9 @@
 
                 <form class="form-inline" role="form">
 
-                    <input class="form-control inputField" id="tempInput" placeholder="Temperature">
+                    <input class="form-control inputField temperatureStuff" id="tempInput" placeholder="Temperature">
                     <div id = "temperature">
-                        <select id = "unit1" class="form-control">
+                        <select id = "unit1" class="form-control temperatureStuff">
                             <option value="c">°C</option>
                             <option value="k">K</option>
                             <option value="f">°F</option>
@@ -71,15 +71,15 @@
 
                         <span id="into"> into </span> <!--For Screen Readers-->
 
-                        <select id = "unit2" class="form-control">
+                        <select id = "unit2" class="form-control temperatureStuff">
                             <option value="c">°C</option>
                             <option value="k">K</option>
                             <option value="f">°F</option>
                             <option value="r">°R</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-lg" id = "submit" onclick="tempChange();return false;">Convert!</button>
-                    <button type="button" class="btn btn-default"  id = "help" data-toggle="tooltip" data-placement="bottom"
+                    <button type="submit" class="btn btn-primary btn-lg temperatureStuff" id = "submit" onclick="tempChange();return false;">Convert!</button>
+                    <button type="button" class="btn btn-default temperatureStuff"  id = "help" data-toggle="tooltip" data-placement="bottom"
                             data-html="true" title="Simply enter the temperature and the unit it is in and select the unit you want it to be in.">Help!</button>
 
                 </form>
