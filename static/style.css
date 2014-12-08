@@ -42,20 +42,23 @@ p{
 
 #unit1{
 	height: 50px;
-    min-width: 80px;
 	font-size: 20px;
 	border-radius: 0px;
+    max-width: 80px;
+    display: inline;
 }
 
 #unit2{
 	height: 50px;
-    min-width: 80px;
 	font-size: 20px;
 	border-radius: 0px;
+    max-width: 80px;
+    display:inline;
 }
 
 #into{
     font-size: 20px;
+    display: inline;
 }
 
 h1{
@@ -109,4 +112,8 @@ div.about{
 
 #aTitle:hover{
   color: #777;
+}
+
+#temperature{
+  padding-bottom: 10px;
 }

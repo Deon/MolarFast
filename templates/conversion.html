@@ -61,23 +61,23 @@
                     <div class="form-group">
                         <input class="form-control" id="inputField" placeholder="Temperature">
                     </div>
+                    <div id = "temperature" class = "col-xs-12">
+                      <select id = "unit1" class="form-control">
+                          <option value="c">°C</option>
+                          <option value="k">K</option>
+                          <option value="f">°F</option>
+                          <option value="r">°R</option>
+                      </select>
 
-                    <select id = "unit1" class="form-control">
-                        <option value="c">°C</option>
-                        <option value="k">K</option>
-                        <option value="f">°F</option>
-                        <option value="r">°R</option>
-                    </select>
+                      <span id="into"> into </span> <!--For Screen Readers-->
 
-                    <span id="into"> into </span> <!--For Screen Readers-->
-
-                    <select id = "unit2" class="form-control">
-                        <option value="c">°C</option>
-                        <option value="k">K</option>
-                        <option value="f">°F</option>
-                        <option value="r">°R</option>
-                    </select>
-
+                      <select id = "unit2" class="form-control">
+                          <option value="c">°C</option>
+                          <option value="k">K</option>
+                          <option value="f">°F</option>
+                          <option value="r">°R</option>
+                      </select>
+                    </div>
                     <button type="submit" class="btn btn-primary btn-lg" id = "submit" onclick="tempChange();return false;">Convert!</button>
                     <button type="button" class="btn btn-default"  id = "help" data-toggle="tooltip" data-placement="bottom"
                             data-html="true" title="Simply enter the temperature and the unit it is in and select the unit you want it to be in.">Help!</button>
