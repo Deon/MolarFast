@@ -6,7 +6,7 @@ function tempChange() {
     var x, output;
 
     // Get the value of input field with id="numb"
-    x = document.getElementById("inputField").value.trim();
+    x = document.getElementById("tempInput").value.trim();
     u1 = document.getElementById("unit1").value;
     u2 = document.getElementById("unit2").value;
 
