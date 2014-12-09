@@ -23,6 +23,7 @@ parts/
 sdist/
 var/
 .idea/
+ptable-parser/
 *.egg-info/
 .installed.cfg
 *.egg
