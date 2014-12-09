@@ -26,11 +26,11 @@ p{
 	border-radius: 0px;
 }
 
-#submit{
+.submit{
 	background-color: #0074d9;
 }
 
-#submit:hover{
+.submit:hover{
 	background-color: #00569e;
 }
 
