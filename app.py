@@ -17,6 +17,10 @@ def conversion():
 def about():
     return render_template("about.html")
 
+@app.route("/google0dec4c879860ede1.html")
+def verify():
+    return render_template("google0dec4c879860ede1.html")
+
 @app.route("/postChemFormula", methods = ["POST"])
 def postChemFormula():
     post = request.get_json()
