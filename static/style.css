@@ -128,15 +128,8 @@ div.about{
 	border-radius: 0px;
 }
 
-#unit1{
-	height: 50px;
-	font-size: 20px;
-	border-radius: 0px;
-    max-width: 70px;
-    display:inline;
-}
-
-#unit2{
+/* Conversion page-specific CSS */
+select.temperatureStuff{
 	height: 50px;
 	font-size: 20px;
 	border-radius: 0px;
@@ -158,12 +151,7 @@ div.about{
 }
 
 
-#cSubmit{
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-#cHelp{
+button.temperatureStuff{
   padding-left: 8px;
   padding-right: 8px;
 }
