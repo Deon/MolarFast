@@ -2,16 +2,69 @@
     font-family: Roboto, sans-serif;
 }
 
+
+/* Navbar stuff. */
+.navbar{
+  width: 100%;
+  border-radius: 0px;
+  background-color:#0074d9;
+}
+
+/* Navbar button on mobile. */
+button.navbar-toggle{
+  background-color: #0074d9;
+  color: #FFFFFF;
+  border-radius: 0px;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus{
+  background-color: #00569e;
+}
+
+.navbar-default .navbar-toggle .icon-bar{
+  background-color: #FFFFFF;
+  border-radius: 0px;
+}
+
+.navbar-default .navbar-collapse{
+  border: none;
+}
+
+
+/* Links */
+.navbar-default .navbar-brand{
+	color: #FFFFFF;
+	font-size: 1.4em;
+}
+.navbar-default .navbar-brand:hover{
+    color: #d4d4d4;
+}
+
+.navbar-default .navbar-nav li a{
+  color: #FFFFFF;
+  font-size: 1.1em;
+}
+
+.navbar-default .navbar-nav li a:hover{
+  color: #d4d4d4;
+}
+
+#active{
+  background-color:#00569e;
+  color: #FFFFFF;
+}
+  
+#active:hover{
+  color: #d4d4d4;
+}
+  
+/* END OF NAVBAR CSS */
+
+
 p{
     margin-top: 10px;
 	margin-left: 5px;
 	margin-right: 5px;
 	text-align: inherit;
-}
-
-.navbar {
-    background-color: #d8d8d8;
-    color: #FFFFFF;
 }
 
 #footer{
@@ -87,19 +140,7 @@ div.about{
 	padding: 10px 4px 10px 4px;
 }
 
-.navbar-brand{
-	color: #888888;
-	font-size: 1.4em;
-}
 
-.navbar{
-	width: 100%;
-	border-radius: 0px;
-}
-
-.navbar-nav{
-	font-size: 1.1em;
-}
 
 .panel-body{
   padding-left: 5px;
