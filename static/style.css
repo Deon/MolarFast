@@ -36,7 +36,7 @@ button.navbar-toggle{
 	font-size: 1.4em;
 }
 .navbar-default .navbar-brand:hover{
-    color: #d4d4d4;
+    color: #e6e6e6;
 }
 
 .navbar-default .navbar-nav li a{
@@ -45,7 +45,7 @@ button.navbar-toggle{
 }
 
 .navbar-default .navbar-nav li a:hover{
-  color: #d4d4d4;
+  color: #e6e6e6;
 }
 
 #active{
@@ -54,7 +54,7 @@ button.navbar-toggle{
 }
   
 #active:hover{
-  color: #d4d4d4;
+  color: #e6e6e6;
 }
   
 /* END OF NAVBAR CSS */
