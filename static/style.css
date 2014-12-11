@@ -12,12 +12,12 @@
 }
 
 /* Navbar button on mobile. */
-button.navbar-toggle{
+button.navbar-toggle, .navbar-default .navbar-toggle:focus{
   background-color: #0074d9;
   color: #FFFFFF;
   border-radius: 0px;
 }
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus{
+.navbar-default .navbar-toggle:hover{
   background-color: #00569e;
 }
 
@@ -68,24 +68,57 @@ p{
 	text-align: inherit;
 }
 
+h1{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top:0px;
+}
+
+h2{
+	margin-top: 0px;
+}
+
+div.about{
+	text-align: left;
+}
+
+.row{
+	text-align: center;
+}
+
+
+.bg-danger {
+	border-radius: 1px;
+	text-align: center;
+	padding: 10px 4px 10px 4px;
+}
+
 #footer{
 	color: #808080;
 	margin-top: 25px;
 	text-align: center;
 }
 
-
+/* Buttons */
 .btn{
 	height: 50px;
 	border-radius: 0px;
 }
 
-.submit{
+.submit, .submit:focus{
 	background-color: #0074d9;
 }
 
 .submit:hover{
 	background-color: #00569e;
+}
+
+.help:focus{
+  background-color: #FFFFFF;
+}
+
+.help:hover{
+  background-color: #e6e6e6;
 }
 
 .inputField{
@@ -116,47 +149,6 @@ p{
     text-align: center;
 }
 
-h1{
-	margin-top: 0px;
-	margin-bottom: 0px;
-	padding-top:0px;
-}
-
-h2{
-	margin-top: 0px;
-}
-
-div.about{
-	text-align: left;
-}
-
-.row{
-	text-align: center;
-}
-
-
-.bg-danger {
-	border-radius: 1px;
-	text-align: center;
-	padding: 10px 4px 10px 4px;
-}
-
-
-
-.panel-body{
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#aTitle{
-  text-decoration: none;
-  color: black;
-}
-
-#aTitle:hover{
-  color: #777;
-}
-
 #temperature{
   display:inline;
 }
@@ -174,5 +166,21 @@ div.about{
 #cHelp{
   padding-left: 8px;
   padding-right: 8px;
+}
+
+
+/* Accordion Dropdowns */
+#aTitle{
+  text-decoration: none;
+  color: black;
+}
+
+#aTitle:hover{
+  color: #777;
+}
+
+.panel-body{
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
