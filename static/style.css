@@ -103,6 +103,8 @@ div.about{
 .btn{
 	height: 50px;
 	border-radius: 0px;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 .submit, .submit:focus{
@@ -113,7 +115,7 @@ div.about{
 	background-color: #00569e;
 }
 
-.help:focus{
+.help, .help:focus{
   background-color: #FFFFFF;
 }
 
@@ -149,13 +151,6 @@ select.temperatureStuff{
 .temperatureStuff{
   margin-bottom: 10px;
 }
-
-
-button.temperatureStuff{
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
 
 /* Accordion Dropdowns */
 #aTitle{
