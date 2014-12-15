@@ -92,6 +92,7 @@ div.about{
   padding: 10px 4px 10px 4px;
 }
 
+
 #footer{
   color: #808080;
   margin-top: 25px;
@@ -166,3 +167,13 @@ select.temperatureStuff{
   padding-right: 5px;
 }
 
+.panel-heading{
+  padding: 0px;
+}
+
+.panel-title{
+  padding: 10px 15px 10px 15px;
+}
+
+td, th{
+  text-align: center;
