@@ -1,8 +1,8 @@
 MolarFast
 =========
-<h1>About MolarFast</h1>
+<h2>About MolarFast</h2>
 <p>
-	MolarFast is designed to give you the Molar Mass of a chemical compound quickly - hence MolarFast.
+MolarFast is designed to give you the Molar Mass of a chemical compound quickly - hence MolarFast.
 As of the latest update, MolarFast is mostly functional - you can use brackets, coefficents, and hydrates.
 Currently, nested brackets are not working.
 </p>
@@ -20,7 +20,7 @@ You can also find our <a href = "https://github.com/DeonHua/MolarFast/releases">
 <p>Internet is required to use MolarFast.</p>
 
 
-<h1>About Us</h1>
+<h2>About Us</h2>
 <p>
 MolarFast was created at the University of Waterloo's Software Engineering HackDay on November 21, 2014 by 
 <a href = "http://github.com/timmui">Timothy Mui</a>, a Computer Engineering student,
