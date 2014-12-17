@@ -1,295 +1,294 @@
 <!DOCTYPE html>
-<html lang="en" ng-app = "FirstYear">
+<html ng-app = "MolarFast" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Deon Hua and Timothy Mui">
-    <meta name="keywords" content="Chemistry, Molar mass, conversion, units, periodic table, science, reference, calculator">
-    <meta name="robots" content="index, follow">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Deon Hua and Timothy Mui">
+  <meta name="keywords" content="Chemistry, Molar mass, conversion, units, periodic table, science, reference, calculator">
+  <meta name="robots" content="index, follow">
 
-    <title>MolarFast | Conversion</title>
+  <title>MolarFast | Conversion</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico?v=2"> <!-- Favicon -->
 
-    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico?v=2"> <!-- Favicon -->
+  <!--CSS-->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/conversion.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:500,400' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css">
-
-	<link href='http://fonts.googleapis.com/css?family=Roboto:500,400' rel='stylesheet' type='text/css'>
-	
-	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
-    <script src="/static/script.js"></script>
-    <script src="/static/ui-bootstrap-tpls-0.11.2.min.js"></script>
+  <!--Javascript-->
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
+  <script src="/static/ui-bootstrap-tpls-0.11.2.min.js"></script>
+  <script src="/static/script.js"></script>
 </head>
-	
+
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
-	<!-- Brand and toggle get grouped for better mobile display -->
-	<div class="navbar-header">
-	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-		<span class="sr-only">Toggle navigation</span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-	  </button>
-	  <a class="navbar-brand" href="/">MolarFast Alpha</a>
-	</div>
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">MolarFast Alpha</a>
+    </div>
 
-	<!-- Collect the nav links, forms, and other content for toggling -->
-	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	  <ul class="nav navbar-nav">
-		<li><a href="/">Home</a></li>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
         <li class="active"><a href="/conversion.html" id = "active">Conversion<span class ="sr-only">(current)</span></a></li>
         <li><a href="/about.html">About</a></li>
-	  </ul>
+      </ul>
 
-	</div><!-- /.navbar-collapse -->
+    </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 
 <body ng-controller = "ConversionController">
-	<div class = "container-fluid">
-        <!-- Temperature Converter -->
-        <div class = "row">
-            <div class = "col-xs-12 col-md-8 col-md-offset-2">
-				<img class = "img-responsive center-block" src = "/static/mf.png">
+<div class = "container-fluid">
+  <!-- Temperature Converter -->
+  <div class = "row">
+    <div class = "col-xs-12 col-md-8 col-md-offset-2">
+      <img class = "img-responsive center-block" src = "/static/mf.png">
 
-                <h3> Temperature Conversion</h3>
+      <h3> Temperature Conversion</h3>
 
-                <form class="form-inline" role="form">
+      <form class="form-inline" role="form">
 
-                    <input class="form-control inputField temperatureStuff" id="tempInput" placeholder="Temperature" ng-model = "input">
-                    <div id = "temperature">
-                        <select id = "unit1" class="form-control temperatureStuff" ng-model = "firstUnit">
-                            <option value="c">°C</option>
-                            <option value="k">K</option>
-                            <option value="f">°F</option>
-                            <option value="r">°R</option>
-                        </select>
+        <input class="form-control inputField temperatureStuff" id="tempInput" placeholder="Temperature" ng-model = "input">
+        <div id = "temperature">
+          <select id = "unit1" class="form-control temperatureStuff" ng-model = "firstUnit">
+            <option value="c">°C</option>
+            <option value="k">K</option>
+            <option value="f">°F</option>
+            <option value="r">°R</option>
+          </select>
 
-                        <span id="into"> into </span> <!--For Screen Readers-->
+          <span id="into"> into </span> <!--For Screen Readers-->
 
-                        <select id = "unit2" class="form-control temperatureStuff" ng-model="secondUnit">
-                            <option value="c">°C</option>
-                            <option value="k">K</option>
-                            <option value="f">°F</option>
-                            <option value="r">°R</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-lg temperatureStuff submit"  id = "cSubmit" ng-click = "tempChange()">Convert!</button>
-                    <button type="button" class="btn btn-default temperatureStuff help" id = "cHelp" data-toggle="tooltip" data-placement="bottom"
-                            data-html="true" title="Simply enter the temperature and the unit it is in and select the unit you want it to be in.">Help!</button>
-
-                </form>
-                <div class = "row">
-                    <div class = "col-xs-12 col-md-8 col-md-offset-2">
-                        <h4 ng-if = "output != null && isError == false">The converted temperature is {[{output}]}.</h4>
-                        <h4 class = "bg-danger" ng-if = "isError == true">That is not a number! Try again.</h4>
-                    </div>
-                </div>
-            </div>
+          <select id = "unit2" class="form-control temperatureStuff" ng-model="secondUnit">
+            <option value="c">°C</option>
+            <option value="k">K</option>
+            <option value="f">°F</option>
+            <option value="r">°R</option>
+          </select>
         </div>
+        <button type="submit" class="btn btn-primary btn-lg temperatureStuff submit"  id = "cSubmit" ng-click = "tempChange()">Convert!</button>
+        <button type="button" class="btn btn-default temperatureStuff help" id = "cHelp" data-toggle="tooltip" data-placement="bottom"
+                data-html="true" title="Simply enter the temperature and the unit it is in and select the unit you want it to be in.">Help!</button>
 
-        <!--Table of unit conversions-->
-        <div class = "row">
-            <div class = "col-xs-12 col-md-8 col-md-offset-2">
-            <div class="panel-group" role="tablist" aria-multiselectable="true">
-              <div class="panel panel-default">
-                    
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <h4 class="panel-title">
-                  <a class="collapsed" data-toggle="collapse"  href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" id = "aTitle">
-                    Unit Conversion Factors
-                  </a>
-                  </h4>
-                </div>
-                    
-                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                      <div class="panel-body">
-                        <div class="table-responsive">
-                          <table class="table table-striped">
-                            <tr>
-                              <th>Length</th>
-                              <td>1 m</td>
-                              <td>10<sup>10</sup> Å</td>
-                              <td>39.370 in</td>
-                              <td>3.28084 ft</td>
-                              <td>6.21371 × 10<sup>–4</sup> mi</td>
-                            </tr>
-                            <tr>
-                              <th>Area</th>
-                              <td>1 m<sup>2</sup></td>
-                              <td>104 cm<sup>2</sup></td>
-                              <td>1550.0031 in<sup>2</sup></td>
-                              <td>10.7639 ft<sup>2</sup></td>
-                              <td>2.47105 × 10<sup>–4</sup> acre</td>
-                            </tr>
-                            <tr>
-                              <th>Volume</th>
-                              <td>1 m<sup>3</sup></td>
-                              <td>1000 L</td>
-                              <td>6.10237 × 10<sup>4</sup> in<sup>3</sup></td>
-                              <td>264.172 gal(US)</td>
-                              <td>219.969 gal(Imp)</td>
-                            </tr>
-                            <tr>
-                              <th>Mass</th>
-                              <td>1 kg</td>
-                              <td>2.20462 lb<sub>m</sub></td>
-                              <td>35.274 oz</td>
-                              <td>10<sup>–3</sup> metric tonnes</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <th>Density</th>
-                              <td>1 g/cm<sup>3</sup></td>
-                              <td>1000 kg/m<sup>3</sup></td>
-                              <td>1000 g/L</td>
-                              <td>62.4280 lb<sub>m</sub>/ft<sup>3</sup></td>
-                              <td>8.34541 lb<sub>m</sub>/gal(US)</td>
-                            </tr>
-                            <tr>
-                              <th>Velocity</th>
-                              <td>1 m/s</td>
-                              <td>3.6 km/h</td>
-                              <td>3.2808 ft/s</td>
-                              <td>196.850 ft/min</td>
-                              <td>2.23694 mi/h</td>
-                            </tr>
-                            <tr>
-                              <th>Force</th>
-                              <td>1 kg·m/s<sup>2</sup> (N)</td>
-                              <td>105 g·cm/s<sup>2</sup> (dyne)</td>
-                              <td>0.224809 lb<sub>f</sub></td>
-                              <td>0.10197 kg<sub>f</sub></td>
-                              <td>7.23301 lb<sub>m</sub>·ft/s<sup>2</sup></td>
-                            </tr>
-                            <tr>
-                              <th>Pressure</th>
-                              <td>1 atm</td>
-                              <td>101325 kg/m·s<sup>2</sup> (Pa)</td>
-                              <td>1.01325 bar</td>
-                              <td>14.6959 lb<sub>f</sub>/in<sup>2</sup> (psi)</td>
-                              <td>760 mmHg (torr)</td>
-                            </tr>
-                            <tr>
-                              <th>Energy</th>
-                              <td>1 kg·m<sup>2</sup>/s<sup>2</sup> (J)</td>
-                              <td>9.4782 × 10<sup>–4</sup> Btu</td>
-                              <td>0.23885 cal</td>
-                              <td>0.737561 ft·lb<sub>f</sub></td>
-                              <td>6.24145 × 10<sup>18</sup> eV</td>
-                            </tr>
-                            <tr>
-                              <th>Power</th>
-                              <td>1 J/s (W)</td>
-                              <td>1 kg·m<sup>2</sup>/s<sup>3</sup></td>
-                              <td>3.4121 Btu/h</td>
-                              <td>1.34102 × 10<sup>–3</sup> hp</td>
-                              <td>10<sup>7</sup> erg/s</td>
-                            </tr>
-                            <tr>
-                              <th>Specific Heat</th>
-                              <td>1 kJ/kg·K</td>
-                              <td>0.23885 cal/g·°C</td>
-                              <td>0.13269 cal/g·°F</td>
-                              <td>0.23885 Btu/lb<sub>m</sub>·°F</td>
-                              <td>185.863 ft.lb<sub>f</sub>/lb<sub>m</sub>·°F</td>
-                            </tr>
-                            <tr>
-                              <th>Mole</th>
-                              <td>1 kmol</td>
-                              <td>1000 mol</td>
-                              <td>106 mmol</td>
-                              <td>109 mmol</td>
-                              <td>2.20462 lb-mol</td>
-                            </tr>
-                            <tr>
-                              <th>Concentration</th>
-                              <td>1 wt.%</td>
-                              <td>0.01 mass fraction</td>
-                              <td>10 ppt</td>
-                              <td>104 ppm</td>
-                              <td>107 ppb</td>
-                            </tr>
-                          </table>
-                      </div>
-                    </div>
-                </div>
+      </form>
+      <div class = "row">
+        <div class = "col-xs-12 col-md-8 col-md-offset-2">
+          <h4 ng-if = "output != null && isError == false">The converted temperature is {[{output}]}.</h4>
+          <h4 class = "bg-danger" ng-if = "isError == true">That is not a number! Try again.</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Table of unit conversions-->
+  <div class = "row">
+    <div class = "col-xs-12 col-md-8 col-md-offset-2">
+      <div class="panel-group" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+
+          <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title">
+              <a class="collapsed" data-toggle="collapse"  href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" id = "aTitle">
+                Unit Conversion Factors
+              </a>
+            </h4>
+          </div>
+
+          <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+            <div class="panel-body">
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <tr>
+                    <th>Length</th>
+                    <td>1 m</td>
+                    <td>10<sup>10</sup> Å</td>
+                    <td>39.370 in</td>
+                    <td>3.28084 ft</td>
+                    <td>6.21371 × 10<sup>–4</sup> mi</td>
+                  </tr>
+                  <tr>
+                    <th>Area</th>
+                    <td>1 m<sup>2</sup></td>
+                    <td>104 cm<sup>2</sup></td>
+                    <td>1550.0031 in<sup>2</sup></td>
+                    <td>10.7639 ft<sup>2</sup></td>
+                    <td>2.47105 × 10<sup>–4</sup> acre</td>
+                  </tr>
+                  <tr>
+                    <th>Volume</th>
+                    <td>1 m<sup>3</sup></td>
+                    <td>1000 L</td>
+                    <td>6.10237 × 10<sup>4</sup> in<sup>3</sup></td>
+                    <td>264.172 gal(US)</td>
+                    <td>219.969 gal(Imp)</td>
+                  </tr>
+                  <tr>
+                    <th>Mass</th>
+                    <td>1 kg</td>
+                    <td>2.20462 lb<sub>m</sub></td>
+                    <td>35.274 oz</td>
+                    <td>10<sup>–3</sup> metric tonnes</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>Density</th>
+                    <td>1 g/cm<sup>3</sup></td>
+                    <td>1000 kg/m<sup>3</sup></td>
+                    <td>1000 g/L</td>
+                    <td>62.4280 lb<sub>m</sub>/ft<sup>3</sup></td>
+                    <td>8.34541 lb<sub>m</sub>/gal(US)</td>
+                  </tr>
+                  <tr>
+                    <th>Velocity</th>
+                    <td>1 m/s</td>
+                    <td>3.6 km/h</td>
+                    <td>3.2808 ft/s</td>
+                    <td>196.850 ft/min</td>
+                    <td>2.23694 mi/h</td>
+                  </tr>
+                  <tr>
+                    <th>Force</th>
+                    <td>1 kg·m/s<sup>2</sup> (N)</td>
+                    <td>105 g·cm/s<sup>2</sup> (dyne)</td>
+                    <td>0.224809 lb<sub>f</sub></td>
+                    <td>0.10197 kg<sub>f</sub></td>
+                    <td>7.23301 lb<sub>m</sub>·ft/s<sup>2</sup></td>
+                  </tr>
+                  <tr>
+                    <th>Pressure</th>
+                    <td>1 atm</td>
+                    <td>101325 kg/m·s<sup>2</sup> (Pa)</td>
+                    <td>1.01325 bar</td>
+                    <td>14.6959 lb<sub>f</sub>/in<sup>2</sup> (psi)</td>
+                    <td>760 mmHg (torr)</td>
+                  </tr>
+                  <tr>
+                    <th>Energy</th>
+                    <td>1 kg·m<sup>2</sup>/s<sup>2</sup> (J)</td>
+                    <td>9.4782 × 10<sup>–4</sup> Btu</td>
+                    <td>0.23885 cal</td>
+                    <td>0.737561 ft·lb<sub>f</sub></td>
+                    <td>6.24145 × 10<sup>18</sup> eV</td>
+                  </tr>
+                  <tr>
+                    <th>Power</th>
+                    <td>1 J/s (W)</td>
+                    <td>1 kg·m<sup>2</sup>/s<sup>3</sup></td>
+                    <td>3.4121 Btu/h</td>
+                    <td>1.34102 × 10<sup>–3</sup> hp</td>
+                    <td>10<sup>7</sup> erg/s</td>
+                  </tr>
+                  <tr>
+                    <th>Specific Heat</th>
+                    <td>1 kJ/kg·K</td>
+                    <td>0.23885 cal/g·°C</td>
+                    <td>0.13269 cal/g·°F</td>
+                    <td>0.23885 Btu/lb<sub>m</sub>·°F</td>
+                    <td>185.863 ft.lb<sub>f</sub>/lb<sub>m</sub>·°F</td>
+                  </tr>
+                  <tr>
+                    <th>Mole</th>
+                    <td>1 kmol</td>
+                    <td>1000 mol</td>
+                    <td>106 mmol</td>
+                    <td>109 mmol</td>
+                    <td>2.20462 lb-mol</td>
+                  </tr>
+                  <tr>
+                    <th>Concentration</th>
+                    <td>1 wt.%</td>
+                    <td>0.01 mass fraction</td>
+                    <td>10 ppt</td>
+                    <td>104 ppm</td>
+                    <td>107 ppb</td>
+                  </tr>
+                </table>
               </div>
-                <div class="panel panel-default">
-                    
-                  <div class="panel-heading" role="tab" id="headingTwo">
-                    <h4 class="panel-title">
-                      <a class="collapsed" data-toggle="collapse"  href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id = "aTitle">
-                      Temperature Equations
-                      </a>
-                    </h4>
-                  </div>
-                    
-                    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
-                      <div class="panel-body">
-                        <table class="table table-striped">
-                          <tr>
-                              <th>Metric</th>
-                              <th>Imperial</th>
-                          </tr>
-                           <tr>
-                              <td>T(°C) = 5 × ( T(°F) – 32) / 9</td>
-                              <td>T(°F) = (9/5) T(°C) + 32</td>
-                          </tr>
-                          <tr>
-                              <td>T(K) = T(°C) + 273.15</td>
-                              <td>T(°R) = T(°F) + 459.67</td>
-                          </tr>
-                        </table>
-                      </div>
-                    </div>
-                </div>
             </div>
-            <p id = "footer">Made with love.<br>© Copyright 2014</p>
+          </div>
         </div>
-	</div>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+              <a class="collapsed" data-toggle="collapse"  href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id = "aTitle">
+                Temperature Equations
+              </a>
+            </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="panel-body">
+              <table class="table table-striped">
+                <tr>
+                  <th>Metric</th>
+                  <th>Imperial</th>
+                </tr>
+                <tr>
+                  <td>T(°C) = 5 × ( T(°F) – 32) / 9</td>
+                  <td>T(°F) = (9/5) T(°C) + 32</td>
+                </tr>
+                <tr>
+                  <td>T(K) = T(°C) + 273.15</td>
+                  <td>T(°R) = T(°F) + 459.67</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p id = "footer">Made with love.<br>© Copyright 2014</p>
+    </div>
+  </div>
 </body>
 <script>
-      $(window).bind('resize load',function(){
-if( $(this).width() < 767 )
-{
-$('.collapse').removeClass('in');
-$('.collapse').addClass('out');
-}
-else
-{
-$('.collapse').removeClass('out');
-$('.collapse').addClass('in');
-}   
-});
+  $(window).bind('resize load',function(){
+    if( $(this).width() < 767 )
+    {
+      $('.collapse').removeClass('in');
+      $('.collapse').addClass('out');
+    }
+    else
+    {
+      $('.collapse').removeClass('out');
+      $('.collapse').addClass('in');
+    }
+  });
 </script>
 <!-- UserVoice JavaScript SDK (only needed once on a page) -->
 <script>(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/LaYDD0JgxtLDaixbL3IGg.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})()</script>
 
-	<!-- A tab to launch the Classic Widget -->
-	<script>
-	UserVoice = window.UserVoice || [];
-	UserVoice.push(['showTab', 'classic_widget', {
-	  mode: 'feedback',
-	  primary_color: '#0074d9',
-	  link_color: '#0074d9',
-	  forum_id: 276826,
-	  tab_label: 'Feedback',
-	  tab_color: '#0074d9',
-	  tab_position: 'bottom-right',
-	  tab_inverted: false
-	}]);
+<!-- A tab to launch the Classic Widget -->
+<script>
+  UserVoice = window.UserVoice || [];
+  UserVoice.push(['showTab', 'classic_widget', {
+    mode: 'feedback',
+    primary_color: '#0074d9',
+    link_color: '#0074d9',
+    forum_id: 276826,
+    tab_label: 'Feedback',
+    tab_color: '#0074d9',
+    tab_position: 'bottom-right',
+    tab_inverted: false
+  }]);
 </script>
-	
+
 <!-- Tracking -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-57076335-1', 'auto');

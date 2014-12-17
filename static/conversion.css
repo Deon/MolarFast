@@ -1,0 +1,22 @@
+
+.temperatureStuff{
+  margin-bottom: 10px;
+}
+
+select.temperatureStuff{
+  height: 50px;
+  font-size: 20px;
+  border-radius: 0px;
+  max-width: 70px;
+  display:inline;
+}
+
+#into{
+  font-size: 20px;
+  text-align: center;
+}
+
+#temperature{
+  display:inline;
+}
+

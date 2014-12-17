@@ -2,14 +2,14 @@
 $(function () { $("[data-toggle='tooltip']").tooltip(); });
 
 //Declare module
-var app = angular.module('FirstYear', ['ui.bootstrap']);
+var app = angular.module("MolarFast", ['ui.bootstrap']);
 
 app.config(function($interpolateProvider) {
-  $interpolateProvider.startSymbol('{[{');
-  $interpolateProvider.endSymbol('}]}');
+    $interpolateProvider.startSymbol('{[{');
+    $interpolateProvider.endSymbol('}]}');
 });
 
-app.controller('MainCtrl', function($scope, $http){
+app.controller('MainController', function($scope, $http){
 
     $scope.time = null;
     $scope.finalMolarMass = null;
@@ -33,24 +33,24 @@ app.controller('MainCtrl', function($scope, $http){
                 data: JSON.stringify({'formula': model}),
                 headers: {'Content-Type': 'application/json'}
             })
-                .success(function (molarMass) {
-                    if (molarMass === ""){
-                        $scope.isError = true;
-                        $scope.error = "Check your formula!";
-                        console.log("Error in $scope.input.");
-                    }
-                    else {
-                        $scope.finalMolarMass = molarMass;
-                        $scope.isError = null;
-                    }
-                        console.log($scope.finalMolarMass);
-                })
-                .error(function (molarMass) {
-                    console.log("Error in $scope.input.");
-                    $scope.error = "Check your formula!";
-                    $scope.finalMolarMass = null;
-                    $scope.isError = true;
-                });
+              .success(function (molarMass) {
+                  if (molarMass === ""){
+                      $scope.isError = true;
+                      $scope.error = "Check your formula!";
+                      console.log("Error in $scope.input.");
+                  }
+                  else {
+                      $scope.finalMolarMass = molarMass;
+                      $scope.isError = null;
+                  }
+                  console.log($scope.finalMolarMass);
+              })
+              .error(function (molarMass) {
+                  console.log("Error in $scope.input.");
+                  $scope.error = "Check your formula!";
+                  $scope.finalMolarMass = null;
+                  $scope.isError = true;
+              });
         }
     };
 });

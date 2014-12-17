@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html ng-app="FirstYear" lang="en">
+<html ng-app="MolarFast" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="author" content="Deon Hua and Timothy Mui">
-    <meta name="keywords" content="Chemistry, Molar mass, conversion, units, periodic table, science, reference, calculator">
-    <meta name="robots" content="index, follow">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Deon Hua and Timothy Mui">
+  <meta name="keywords" content="Chemistry, Molar mass, conversion, units, periodic table, science, reference, calculator">
+  <meta name="robots" content="index, follow">
 
-    <title>MolarFast | Home</title>
+  <title>MolarFast | Home</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico?v=2"> <!-- Favicon -->
 
-    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico?v=2"> <!-- Favicon -->
+  <!--CSS-->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:500,400' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css">
-	
-	<link href='http://fonts.googleapis.com/css?family=Roboto:500,400' rel='stylesheet' type='text/css'>
-	
-	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
-    <script src="/static/script.js"></script>
-    <script src="/static/ui-bootstrap-tpls-0.11.2.min.js"></script>
+  <!--Javascript-->
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
+  <script src="/static/ui-bootstrap-tpls-0.11.2.min.js"></script>
+  <script src="/static/script.js"></script>
 </head>
 
 <!--Navbar-->
@@ -50,160 +50,160 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<body ng-controller="MainCtrl">    
-	<div class = "container-fluid">
-		<div class = "row">
-			<!-- Molar Mass Calculations -->
+<body ng-controller="MainController">
+<div class = "container-fluid">
+  <div class = "row">
+    <!-- Molar Mass Calculations -->
 
-			<div class = "col-xs-12 col-md-8 col-md-offset-2">
-                <img class = "img-responsive center-block" src = "/static/mf.png">
-				<br>
-				<form class="form-inline" role="form">					
-					<div class="form-group">
-						<input class="form-control inputField" placeholder="Chemical Formula" ng-model = "rawFormula">
-					</div>	
-					<button type="submit" class="btn btn-primary btn-lg submit" ng-click = findMolarMass(rawFormula)>Find Molar Mass!</button>
-					<button type="button" class="btn btn-default help"  data-toggle="tooltip" data-placement="bottom" data-html="true" title="MolarFast takes unformatted input, but make sure you capitalize properly. For Al(NO<sub>2</sub>)<sub>3</sub>, simply put Al(NO2)3!">Help!</button>
-				</form>
-					
-				<br>
-				<h4 ng-if="finalMolarMass != null && !isError">The Molar Mass for {[{originalFormula}]} is {[{finalMolarMass}]} g/mol.</h4>
-			</div>
-
-			<div class = "col-xs-12 col-md-4 col-md-offset-4">
-					<p ng-if="isError != null" class = "bg-danger">{[{error}]}</p>
-			</div>
-		</div>
-
-		<div class = "row" style="margin-top:20px;">
-            <!-- Useful Constants -->
-            <div class="col-xs-12 col-md-8 col-md-offset-2">
-				<div class="panel-group" role="tablist" aria-multiselectable="true">
-                    <div class="panel panel-default">                      
-                        <div class="panel-heading" role="tab" id="headingOne">
-                          <h4 class="panel-title">
-                          <a class="collapsed" data-toggle="collapse"  href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" id = "aTitle">
-                              Constants
-                          </a>
-                          </h4>
-                        </div>
-                      
-                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                          <div class="panel-body">
-                            <table class="table table-striped">
-                                <tr>
-                                    <th>Avogadro's Number</th>
-                                    <td>6.02214 x 10<sup>23</sup> mol<sup>–1</sup></td>
-                                </tr>
-                                <tr>
-                                    <th>Faraday Constant</th>
-                                    <td>96485.31 C/mol</td>
-                                </tr>
-                                <tr>
-                                    <th>Boltzmann's Constant</th>
-                                    <td>1.38066 x 10<sup>–23</sup> J/K</td>
-                                </tr>
-                            </table>
-                          </div>
-                        </div>
-                    </div>
-                  
-				  <div class="panel panel-default">
-                      
-					    <div class="panel-heading" role="tab" id="headingTwo">
-                          <h4 class="panel-title">
-                          <a class="collapsed" data-toggle="collapse"  href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id = "aTitle">
-                              Gas Constants (R)
-                          </a>
-                          </h4>
-					    </div>
-                      
-					<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-					  <div class="panel-body">
-                        <table class="table table-striped">
-                          <tr>
-                              <td>8.31451 J/mol·K</td>
-                              <td>8.31451 m<sup>3</sup>·Pa/mol·K</td>
-                          </tr>
-                          <tr>
-                              <td>1.98589 cal/mol·K</td>
-                              <td>1545.36 ft·lb<sub>f</sub>/lb<sub>mol</sub>·°R</td>
-                          </tr>
-                          <tr>
-                              <td>0.082058 L·atm/mol·K</td>
-                              <td>0.730244 ft<sup>3</sup>·atm/lb<sub>mol</sub>·°R</td>
-                          </tr>
-                          <tr>
-                              <td>10.7316 ft<sup>3</sup>·psi/lb<sub>mol</sub>·°R</td>
-                              <td>82.0578 cm<sup>3</sup>·atm/mol·K</td>
-                          </tr>
-                        </table>
-					  </div>
-					</div>
-				  </div>
-                  
-				  <div class="panel panel-default">
-                    
-					    <div class="panel-heading" role="tab" id="headingThree">
-                          <h4 class="panel-title">
-                          <a class="collapsed" data-toggle="collapse"  href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" id = "aTitle">
-                              Standard Temperatures and Pressures
-                          </a>
-                          </h4>
-					    </div>
-                    
-					<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-					  <div class="panel-body">
-						<table class="table table-striped">
-                          <tr>
-                              <th>Standard Temperature and Pressure (STP)</th>
-                              <th>Standard Ambient Temperature and Pressure (SATP)</th>
-                          </tr>
-                           <tr>
-                              <td>273.15 K (0 °C, 32 °F)</td>
-                              <td>298.15 K (25 °C, 77 °F)</td>
-                          </tr>
-                          <tr>
-                              <td colspan = "2">100.0 kPa (14.504 psi, 0.987 atm, 1.000 bar)</td>
-                          </tr>
-                        </table>
-					  </div>
-					</div>
-				  </div>
-				</div>
-            </div>
+    <div class = "col-xs-12 col-md-8 col-md-offset-2">
+      <img class = "img-responsive center-block" src = "/static/mf.png">
+      <br>
+      <form class="form-inline" role="form">
+        <div class="form-group">
+          <input class="form-control inputField" placeholder="Chemical Formula" ng-model = "rawFormula">
         </div>
-		<p id = "footer">Made with love.<br>© Copyright 2014</p>
+        <button type="submit" class="btn btn-primary btn-lg submit" ng-click = findMolarMass(rawFormula)>Find Molar Mass!</button>
+        <button type="button" class="btn btn-default help"  data-toggle="tooltip" data-placement="bottom" data-html="true" title="MolarFast takes unformatted input, but make sure you capitalize properly. For Al(NO<sub>2</sub>)<sub>3</sub>, simply put Al(NO2)3!">Help!</button>
+      </form>
+
+      <br>
+      <h4 ng-if="finalMolarMass != null && !isError">The Molar Mass for {[{originalFormula}]} is {[{finalMolarMass}]} g/mol.</h4>
+    </div>
+
+    <div class = "col-xs-12 col-md-4 col-md-offset-4">
+      <p ng-if="isError != null" class = "bg-danger">{[{error}]}</p>
+    </div>
+  </div>
+
+  <div class = "row" style="margin-top:20px;">
+    <!-- Useful Constants -->
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <div class="panel-group" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title">
+              <a class="collapsed" data-toggle="collapse"  href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" id = "aTitle">
+                Constants
+              </a>
+            </h4>
+          </div>
+
+          <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+            <div class="panel-body">
+              <table class="table table-striped">
+                <tr>
+                  <th>Avogadro's Number</th>
+                  <td>6.02214 x 10<sup>23</sup> mol<sup>–1</sup></td>
+                </tr>
+                <tr>
+                  <th>Faraday Constant</th>
+                  <td>96485.31 C/mol</td>
+                </tr>
+                <tr>
+                  <th>Boltzmann's Constant</th>
+                  <td>1.38066 x 10<sup>–23</sup> J/K</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+
+          <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+              <a class="collapsed" data-toggle="collapse"  href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id = "aTitle">
+                Gas Constants (R)
+              </a>
+            </h4>
+          </div>
+
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="panel-body">
+              <table class="table table-striped">
+                <tr>
+                  <td>8.31451 J/mol·K</td>
+                  <td>8.31451 m<sup>3</sup>·Pa/mol·K</td>
+                </tr>
+                <tr>
+                  <td>1.98589 cal/mol·K</td>
+                  <td>1545.36 ft·lb<sub>f</sub>/lb<sub>mol</sub>·°R</td>
+                </tr>
+                <tr>
+                  <td>0.082058 L·atm/mol·K</td>
+                  <td>0.730244 ft<sup>3</sup>·atm/lb<sub>mol</sub>·°R</td>
+                </tr>
+                <tr>
+                  <td>10.7316 ft<sup>3</sup>·psi/lb<sub>mol</sub>·°R</td>
+                  <td>82.0578 cm<sup>3</sup>·atm/mol·K</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+
+          <div class="panel-heading" role="tab" id="headingThree">
+            <h4 class="panel-title">
+              <a class="collapsed" data-toggle="collapse"  href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" id = "aTitle">
+                Standard Temperatures and Pressures
+              </a>
+            </h4>
+          </div>
+
+          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="panel-body">
+              <table class="table table-striped">
+                <tr>
+                  <th>Standard Temperature and Pressure (STP)</th>
+                  <th>Standard Ambient Temperature and Pressure (SATP)</th>
+                </tr>
+                <tr>
+                  <td>273.15 K (0 °C, 32 °F)</td>
+                  <td>298.15 K (25 °C, 77 °F)</td>
+                </tr>
+                <tr>
+                  <td colspan = "2">100.0 kPa (14.504 psi, 0.987 atm, 1.000 bar)</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p id = "footer">Made with love.<br>© Copyright 2014</p>
 
 
-	</div> <!--Container-->
+</div> <!--Container-->
 </body>
 
 
 
-	<!-- UserVoice JavaScript SDK (only needed once on a page) -->
-	<script>(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/LaYDD0JgxtLDaixbL3IGg.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})()</script>
+<!-- UserVoice JavaScript SDK (only needed once on a page) -->
+<script>(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/LaYDD0JgxtLDaixbL3IGg.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})()</script>
 
-	<!-- A tab to launch the Classic Widget -->
-	<script>
-	UserVoice = window.UserVoice || [];
-	UserVoice.push(['showTab', 'classic_widget', {
-	  mode: 'feedback',
-	  primary_color: '#0074d9',
-	  link_color: '#0074d9',
-	  forum_id: 276826,
-	  tab_label: 'Feedback',
-	  tab_color: '#0074d9',
-	  tab_position: 'bottom-right',
-	  tab_inverted: false
-	}]);
+<!-- A tab to launch the Classic Widget -->
+<script>
+  UserVoice = window.UserVoice || [];
+  UserVoice.push(['showTab', 'classic_widget', {
+    mode: 'feedback',
+    primary_color: '#0074d9',
+    link_color: '#0074d9',
+    forum_id: 276826,
+    tab_label: 'Feedback',
+    tab_color: '#0074d9',
+    tab_position: 'bottom-right',
+    tab_inverted: false
+  }]);
 </script>
-	
+
 <!-- Tracking -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-57076335-1', 'auto');

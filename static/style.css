@@ -2,7 +2,6 @@
   font-family: Roboto, sans-serif;
 }
 
-
 /* Navbar stuff. */
 .navbar{
   border-radius: 0px;
@@ -52,11 +51,11 @@ button.navbar-toggle, .navbar-default .navbar-toggle:focus{
   background-color:#00569e;
   color: #FFFFFF;
 }
-  
+
 #active:hover{
   color: #e6e6e6;
 }
-  
+
 /* END OF NAVBAR CSS */
 
 
@@ -108,11 +107,11 @@ div.about{
 }
 
 .submit, .submit:focus{
-	background-color: #0074d9;
+  background-color: #0074d9;
 }
 
 .submit:hover{
-	background-color: #00569e;
+  background-color: #00569e;
 }
 
 .help, .help:focus{
@@ -128,28 +127,6 @@ div.about{
   font-size: 20px;
   min-width: 100px;
   border-radius: 0px;
-}
-
-/* Conversion page-specific CSS */
-select.temperatureStuff{
-  height: 50px;
-  font-size: 20px;
-  border-radius: 0px;
-  max-width: 70px;
-  display:inline;
-}
-
-#into{
-  font-size: 20px;
-  text-align: center;
-}
-
-#temperature{
-  display:inline;
-}
-
-.temperatureStuff{
-  margin-bottom: 10px;
 }
 
 /* Accordion Dropdowns */
