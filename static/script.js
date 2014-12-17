@@ -63,8 +63,13 @@ app.controller('ConversionController', function($scope){
     $scope.isError = false;
 
     $scope.tempChange = function () {
-        if (isNaN($scope.input) == true || $scope.input == "" || $scope.input == undefined){
+        console.log($scope.input);
+        if (isNaN($scope.input) == true){
             $scope.isError = true;
+        }
+        else if ($scope.input == "" || $scope.input == undefined){
+            $scope.output = null;
+            $scope.isError = false;
         }
         else if (isNaN($scope.input) == false){
             //console.log($scope.firstUnit);

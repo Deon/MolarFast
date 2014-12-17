@@ -21,7 +21,7 @@
   <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
-  <script src="/static/ui-bootstrap-tpls-0.11.2.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.js"></script>
   <script src="/static/script.js"></script>
 </head>
 
@@ -61,9 +61,10 @@
 
       <form class="form-inline" role="form">
 
-        <input class="form-control inputField temperatureStuff" id="tempInput" placeholder="Temperature" ng-model = "input">
+        <input class="form-control inputField temperatureStuff" id="tempInput" placeholder="Temperature" ng-model = "input" ng-change = "tempChange()"
+                 tooltip-trigger = "focus" tooltip = "Simply enter the temperature and the unit it is in and select the unit you want it to be in.">
         <div id = "temperature">
-          <select id = "unit1" class="form-control temperatureStuff" ng-model = "firstUnit">
+          <select id = "unit1" class="form-control temperatureStuff" ng-model = "firstUnit" ng-change = "tempChange()">
             <option value="c">°C</option>
             <option value="k">K</option>
             <option value="f">°F</option>
@@ -72,16 +73,13 @@
 
           <span id="into"> into </span> <!--For Screen Readers-->
 
-          <select id = "unit2" class="form-control temperatureStuff" ng-model="secondUnit">
+          <select id = "unit2" class="form-control temperatureStuff" ng-model="secondUnit" ng-change = "tempChange()">
             <option value="c">°C</option>
             <option value="k">K</option>
             <option value="f">°F</option>
             <option value="r">°R</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg temperatureStuff submit"  id = "cSubmit" ng-click = "tempChange()">Convert!</button>
-        <button type="button" class="btn btn-default temperatureStuff help" id = "cHelp" data-toggle="tooltip" data-placement="bottom"
-                data-html="true" title="Simply enter the temperature and the unit it is in and select the unit you want it to be in.">Help!</button>
 
       </form>
       <div class = "row">
