@@ -24,7 +24,7 @@ app.controller('MainCtrl', function($scope, $http){
             $scope.error = "You should fill it in!";
             $scope.isError = true;
             $scope.originalFormula = null;
-            console.log("undefined input");
+            console.log("undefined $scope.input");
         }
         else {
             $http({
@@ -37,7 +37,7 @@ app.controller('MainCtrl', function($scope, $http){
                     if (molarMass === ""){
                         $scope.isError = true;
                         $scope.error = "Check your formula!";
-                        console.log("Error in input.");
+                        console.log("Error in $scope.input.");
                     }
                     else {
                         $scope.finalMolarMass = molarMass;
@@ -46,7 +46,7 @@ app.controller('MainCtrl', function($scope, $http){
                         console.log($scope.finalMolarMass);
                 })
                 .error(function (molarMass) {
-                    console.log("Error in input.");
+                    console.log("Error in $scope.input.");
                     $scope.error = "Check your formula!";
                     $scope.finalMolarMass = null;
                     $scope.isError = true;
@@ -55,3 +55,91 @@ app.controller('MainCtrl', function($scope, $http){
     };
 });
 
+app.controller('ConversionController', function($scope){
+    $scope.input = null;
+    $scope.firstUnit = "c";
+    $scope.secondUnit = "k";
+    $scope.output = null;
+    $scope.isError = false;
+
+    $scope.tempChange = function () {
+        if (isNaN($scope.input) == true || $scope.input == "" || $scope.input == undefined){
+            $scope.isError = true;
+        }
+        else if (isNaN($scope.input) == false){
+            //console.log($scope.firstUnit);
+            //console.log($scope.secondUnit);
+            $scope.isError = false;
+            // Celsius
+            if ($scope.firstUnit == "c") {
+                if ($scope.secondUnit == "c") {
+                    $scope.output = $scope.input + " °C";
+                }
+                else if ($scope.secondUnit == "k") {
+                    $scope.output = (parseFloat($scope.input) + 273.15) + " K";
+                }
+                else if ($scope.secondUnit == "f") {
+                    $scope.output = toF($scope.input) + " °F";
+                }
+                else if ($scope.secondUnit == "r") {
+                    $scope.output = (toF($scope.input) + 459.67) + " °R";
+                }
+            }
+            // Kelvin
+            if ($scope.firstUnit == "k") {
+                if ($scope.secondUnit == "c") {
+                    $scope.output = (parseFloat($scope.input) - 273.15) + " °C";
+                }
+                else if ($scope.secondUnit == "k") {
+                    $scope.output = $scope.input + " K";
+                }
+                else if ($scope.secondUnit == "f") {
+                    $scope.output = toF(parseFloat($scope.input) - 273.15) + " °F";
+                }
+                else if ($scope.secondUnit == "r") {
+                    $scope.output = (toF(parseFloat($scope.input) - 273.15) + 459.67) + " °R";
+                }
+            }
+            // Fahrenheit
+            if ($scope.firstUnit == "f") {
+                if ($scope.secondUnit == "c") {
+                    $scope.output = toC($scope.input) + " °C";
+                }
+                else if ($scope.secondUnit == "k") {
+                    $scope.output = (parseFloat(toC($scope.input)) + 273.15) + " K";
+                }
+                else if ($scope.secondUnit == "f") {
+                    $scope.output = $scope.input + " °F";
+                }
+                else if ($scope.secondUnit == "r") {
+                    $scope.output = (parseFloat($scope.input) + 459.67) + " °R";
+                }
+            }
+            // Rankine
+            if ($scope.firstUnit == "r") {
+                if ($scope.secondUnit == "c") {
+                    $scope.output = toC(parseFloat($scope.input) - 459.67) + " °C";
+                }
+                else if ($scope.secondUnit == "k") {
+                    $scope.output = (parseFloat(toC(parseFloat($scope.input) - 459.67)) + 273.15) + " K";
+                }
+                else if ($scope.secondUnit == "f") {
+                    $scope.output = (parseFloat($scope.input) - 459.67) + " °F";
+                }
+                else if ($scope.secondUnit == "r") {
+                    $scope.output = $scope.input + " °R";
+                }
+            }
+        }
+    };
+
+    // Celsius to Fahrenheit
+    toF = function(num){
+        return ((9.0/5)*num+32);
+    };
+
+    // Fahrenheit Celsius
+    toC = function(num){
+        return (5*(num-32)/9.0);
+    };
+});

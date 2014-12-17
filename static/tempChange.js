@@ -11,8 +11,6 @@ function tempChange() {
     u2 = document.getElementById("unit2").value;
 
     if (isNaN(x) == true || x == ""){
-        document.getElementById("tempOut").innerHTML = "<strong>That is not a number! Try again.</strong>";
-        document.getElementById("tempOut").className = "bg-danger";
         return false;
     }
     else if (isNaN(x) == false){
@@ -76,9 +74,6 @@ function tempChange() {
                 output = x + " °R";
             }
         }
-
-        document.getElementById("tempOut").innerHTML = "<h4>The converted temperature is " + output + ".</h4>";
-        document.getElementById("tempOut").className = null;
     }
     return false;
 }
