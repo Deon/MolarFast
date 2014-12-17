@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="MolarFast" lang="en">
+<html data-ng-app="MolarFast" lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +14,7 @@
   <!--CSS-->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="/static/style.css">
-  <link href='http://fonts.googleapis.com/css?family=Roboto:500,400' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Roboto:500,400'>
 
   <!--Javascript-->
   <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -45,38 +45,37 @@
         <li><a href="/conversion.html">Conversion</a></li>
         <li><a href="/about.html">About</a></li>
       </ul>
-
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 
-<body ng-controller="MainController">
+<body data-ng-controller="MainController">
 <div class = "container-fluid">
   <div class = "row">
-    <!-- Molar Mass Calculations -->
 
+    <!-- Molar Mass Calculations -->
     <div class = "col-xs-12 col-md-8 col-md-offset-2">
-      <img class = "img-responsive center-block" src = "/static/mf.png">
+      <img class = "img-responsive center-block" src = "/static/mf.png" alt = "MolarFast">
       <br>
       <form class="form-inline" role="form">
         <div class="form-group">
-          <input class="form-control inputField" placeholder="Chemical Formula" ng-model = "rawFormula">
+          <input class="form-control inputField" placeholder="Chemical Formula" data-ng-model = "rawFormula">
         </div>
-        <button type="submit" class="btn btn-primary btn-lg submit" ng-click = findMolarMass(rawFormula)>Find Molar Mass!</button>
+        <button type="submit" class="btn btn-primary btn-lg submit" data-ng-click = findMolarMass(rawFormula)>Find Molar Mass!</button>
         <button type="button" class="btn btn-default help"  data-toggle="tooltip" data-placement="bottom" data-html="true" title="MolarFast takes unformatted input, but make sure you capitalize properly. For Al(NO<sub>2</sub>)<sub>3</sub>, simply put Al(NO2)3!">Help!</button>
       </form>
 
       <br>
-      <h4 ng-if="finalMolarMass != null && !isError">The Molar Mass for {[{originalFormula}]} is {[{finalMolarMass}]} g/mol.</h4>
+      <h4 data-ng-if="finalMolarMass != null && !isError">The Molar Mass for {[{originalFormula}]} is {[{finalMolarMass}]} g/mol.</h4>
     </div>
 
     <div class = "col-xs-12 col-md-4 col-md-offset-4">
-      <p ng-if="isError != null" class = "bg-danger">{[{error}]}</p>
+      <p data-ng-if="isError != null" class = "bg-danger">{[{error}]}</p>
     </div>
   </div>
 
+  <!-- Useful Constants -->
   <div class = "row" style="margin-top:20px;">
-    <!-- Useful Constants -->
     <div class="col-xs-12 col-md-8 col-md-offset-2">
       <div class="panel-group" role="tablist" aria-multiselectable="true">
         <div class="panel panel-default">
@@ -109,7 +108,6 @@
         </div>
 
         <div class="panel panel-default">
-
           <div class="panel-heading" role="tab" id="headingTwo">
             <h4 class="panel-title">
               <a class="collapsed" data-toggle="collapse"  href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id = "aTitle">
@@ -143,7 +141,6 @@
         </div>
 
         <div class="panel panel-default">
-
           <div class="panel-heading" role="tab" id="headingThree">
             <h4 class="panel-title">
               <a class="collapsed" data-toggle="collapse"  href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" id = "aTitle">
@@ -174,8 +171,6 @@
     </div>
   </div>
   <p id = "footer">Made with love.<br>© Copyright 2014</p>
-
-
 </div> <!--Container-->
 </body>
 
