@@ -5,23 +5,28 @@ import MolarMass
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def home():
     return render_template("index.html")
+
 
 @app.route("/conversion.html")
 def conversion():
     return render_template("conversion.html")
 
+
 @app.route("/about.html")
 def about():
     return render_template("about.html")
+
 
 @app.route("/google0dec4c879860ede1.html")
 def verify():
     return render_template("google0dec4c879860ede1.html")
 
-@app.route("/postChemFormula", methods = ["POST"])
+
+@app.route("/postChemFormula", methods=["POST"])
 def postChemFormula():
     post = request.get_json()
     app.logger.debug(post)
@@ -34,6 +39,11 @@ def postChemFormula():
         return outputMolarMass
     else:
         return ""
+
+@app.errorhandler(404)
+def pageNotFound(error):
+    return render_template("pageNotFound.html"), 404
+
 
 if __name__ == ("__main__"):
     app.run(debug=True,host='0.0.0.0',port=int(os.environ.get("PORT", 5000)))
