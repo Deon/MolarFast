@@ -45,7 +45,7 @@ app.controller('MainController', function($scope, $http){
                   }
                   console.log($scope.finalMolarMass);
               })
-              .error(function (molarMass) {
+              .error(function () {
                   console.log("Error in $scope.input.");
                   $scope.error = "Check your formula!";
                   $scope.finalMolarMass = null;
@@ -139,12 +139,12 @@ app.controller('ConversionController', function($scope){
     };
 
     // Celsius to Fahrenheit
-    toF = function(num){
+    var toF = function(num){
         return ((9.0/5)*num+32);
     };
 
     // Fahrenheit Celsius
-    toC = function(num){
+    var toC = function(num){
         return (5*(num-32)/9.0);
     };
 });
