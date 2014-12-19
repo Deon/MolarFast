@@ -62,7 +62,8 @@
       <form class="form-inline" role="form">
 
         <input class="form-control inputField temperatureStuff" id="tempInput" placeholder="Temperature" ng-model = "input" ng-change = "tempChange()"
-                 tooltip-trigger = "focus" tooltip = "Simply enter the temperature and the unit it is in and select the unit you want it to be in.">
+                 tooltip-trigger = "focus" tooltip-placement = "bottom"
+                 tooltip = "Simply enter the temperature and the unit it is in and select the unit you want it to be in.">
         <div id = "temperature">
           <select id = "unit1" class="form-control temperatureStuff" ng-model = "firstUnit" ng-change = "tempChange()">
             <option value="c">°C</option>

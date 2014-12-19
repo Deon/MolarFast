@@ -59,10 +59,11 @@
       <br>
       <form class="form-inline" role="form">
         <div class="form-group">
-          <input class="form-control inputField" placeholder="Chemical Formula" data-ng-model = "rawFormula">
+          <input class="form-control inputField" placeholder="Chemical Formula" data-ng-model = "rawFormula"
+                  tooltip-trigger = "focus" tooltip-placement = "bottom"
+                  tooltip-html-unsafe = "MolarFast takes unformatted input, but make sure you capitalize properly. For Al(NO<sub>2</sub>)<sub>3</sub>, simply put Al(NO2)3!">
         </div>
         <button type="submit" class="btn btn-primary btn-lg submit" data-ng-click = findMolarMass(rawFormula)>Find Molar Mass!</button>
-        <button type="button" class="btn btn-default help"  data-toggle="tooltip" data-placement="bottom" data-html="true" title="MolarFast takes unformatted input, but make sure you capitalize properly. For Al(NO<sub>2</sub>)<sub>3</sub>, simply put Al(NO2)3!">Help!</button>
       </form>
 
       <br>
