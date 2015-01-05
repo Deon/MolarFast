@@ -59,9 +59,12 @@
       <br>
       <form class="form-inline" role="form">
         <div class="form-group">
-          <input class="form-control inputField" placeholder="Chemical Formula" data-ng-model = "rawFormula"
-                  tooltip-trigger = "focus" tooltip-placement = "bottom"
+          <input class="form-control visible-xs-inline inputField" placeholder="Chemical Formula" data-ng-model = "rawFormula"
+                  tooltip-trigger = "focus" tooltip-placement = "top"
                   tooltip-html-unsafe = "MolarFast takes unformatted input, but make sure you capitalize properly. For Al(NO<sub>2</sub>)<sub>3</sub>, simply put Al(NO2)3!">
+          <input class="form-control hidden-xs inputField" placeholder="Chemical Formula" data-ng-model = "rawFormula"
+                tooltip-trigger = "focus" tooltip-placement = "left"
+                tooltip-html-unsafe = "MolarFast takes unformatted input, but make sure you capitalize properly. For Al(NO<sub>2</sub>)<sub>3</sub>, simply put Al(NO2)3!">
         </div>
         <button type="submit" class="btn btn-primary btn-lg submit" data-ng-click = findMolarMass(rawFormula)>Find Molar Mass!</button>
       </form>
