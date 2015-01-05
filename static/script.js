@@ -2,7 +2,7 @@
 $(function () { $("[data-toggle='tooltip']").tooltip(); });
 
 //Declare module
-var app = angular.module("MolarFast", ['ui.bootstrap']);
+var app = angular.module("MolarFast", ['ui.bootstrap', 'ngTouch']);
 
 app.config(function($interpolateProvider) {
     $interpolateProvider.startSymbol('{[{');
