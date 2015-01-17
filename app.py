@@ -1,10 +1,11 @@
 __author__ = 'Deon Hua and Timothy Mui'
 from flask import *
+from flask_cors import *
 import os
 import MolarMass
 
 app = Flask(__name__)
-
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route("/")
 def home():
@@ -27,6 +28,7 @@ def verify():
 
 
 @app.route("/postChemFormula", methods=["POST"])
+@cross_origin()
 def postChemFormula():
     post = request.get_json()
     app.logger.debug(post)

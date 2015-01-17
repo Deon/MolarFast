@@ -1,0 +1,11 @@
+{
+  "name": "MolarFast",
+  "icons": [
+    {
+      "src": "static/favicon.ico"
+    }
+  ],
+  "start_url": "index.html",
+  "display": "standalone",
+  "orientation": "portrait"
+}
