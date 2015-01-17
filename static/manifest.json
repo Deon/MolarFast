@@ -2,7 +2,7 @@
   "name": "MolarFast",
   "icons": [
     {
-      "src": "/img/icon-0-75x.png",
+      "src": "/img/icon-0.75x.png",
       "sizes": "36x36",
       "type": "image/png",
       "density": "0.75"
@@ -14,7 +14,7 @@
       "density": "1.0"
     },
     {
-      "src": "/img/icon-1-5x.png",
+      "src": "/img/icon-1.5x.png",
       "sizes": "72x72",
       "type": "image/png",
       "density": "1.5"
@@ -38,7 +38,7 @@
       "density": "4.0"
     }
   ],
-  "start_url": "index.html",
+  "start_url": "/",
   "display": "standalone",
   "orientation": "portrait"
 }
