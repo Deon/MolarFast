@@ -11,6 +11,10 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 def home():
     return render_template("index.html")
 
+#For "Add to Homescreen" for Chrome M39
+@app.route("/index.html")
+def mobileApp():
+    return render_template("index.html")
 
 @app.route("/conversion.html")
 def conversion():
