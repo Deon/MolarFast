@@ -8,6 +8,7 @@ select.temperatureStuff{
   font-size: 20px;
   border-radius: 0;
   max-width: 70px;
+  padding: 6px;
   display:inline;
 }
 
