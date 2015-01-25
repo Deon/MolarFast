@@ -16,23 +16,21 @@ were obtained from <a href="http://physics.nist.gov/cgi-bin/Compositions/stand_a
 The University of Waterloo, University of Waterloo Department of Chemical Engineering, nor NIST is associated or affiliated with MolarFast.</p>
 
 <p>This web-app was developed with AngularJS, Bootstrap, Flask, and Python.</p>
-<p>Issues can be reported on the <a href = "https://github.com/DeonHua/MolarFast/issues">Github</a>.
-You can also find our <a href = "https://github.com/DeonHua/MolarFast/releases">changelog</a> there as well.</p>
 
 <p>MolarFast is published under the <a href = "http://www.gnu.org/copyleft/gpl.html">GNU GPL v3.0 Licence.</a></p>
 
 
 
 ### About Us
-<p>
+
 MolarFast was created at SE Hack Day #13 on November 21, 2014 by
 <a href = "http://github.com/timmui">Timothy Mui</a>, a Computer Engineering student,
-	and <a href = "http://github.com/DeonHua">Deon Hua</a>, a Software Engineering student.
-	You can find the source code on our <a href = "http://github.com/DeonHua/MolarFast">GitHub</a>.</p>
+and <a href = "http://github.com/DeonHua">Deon Hua</a>, a Software Engineering student.
+
 Made with love.
 
 ## Development
 Simply clone the repo, install flask and flask-cors via PIP, and run `app.py`. 
 
 ### API Endpoint
-Send a POST request to `postChemFormula`, with {{formula:"yourChemFormula"}}. The molar mass will be returned.
+Send a POST request to `postChemFormula`, with `{{formula:"yourChemFormula"}}`. The molar mass will be returned.
