@@ -32,7 +32,7 @@ MolarFast was created at SE Hack Day #13 on November 21, 2014 by
 Made with love.
 
 ## Development
-Simply clone the repo, install flask and flask-cors via PIP, and run 'app.py'. 
+Simply clone the repo, install flask and flask-cors via PIP, and run `app.py`. 
 
 ### API Endpoint
-Send a POST request to 'postChemFormula', with {{formula:"yourChemFormula"}}. The molar mass will be returned.
+Send a POST request to `postChemFormula`, with {{formula:"yourChemFormula"}}. The molar mass will be returned.
