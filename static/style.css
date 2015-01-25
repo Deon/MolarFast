@@ -4,7 +4,7 @@
 
 /* Navbar stuff. */
 .navbar{
-  border-radius: 0px;
+  border-radius: 0;
   background-color:#0074d9;
   border: none;
 }
@@ -13,7 +13,7 @@
 button.navbar-toggle, .navbar-default .navbar-toggle:focus{
   background-color: #0074d9;
   color: #FFFFFF;
-  border-radius: 0px;
+  border-radius: 0;
 }
 .navbar-default .navbar-toggle:hover{
   background-color: #00569e;
@@ -21,7 +21,7 @@ button.navbar-toggle, .navbar-default .navbar-toggle:focus{
 
 .navbar-default .navbar-toggle .icon-bar{
   background-color: #FFFFFF;
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 .navbar-default .navbar-collapse{
@@ -44,6 +44,7 @@ button.navbar-toggle, .navbar-default .navbar-toggle:focus{
 }
 
 .navbar-default .navbar-nav li a:hover{
+    background-color: #0060aa;
   color: #e6e6e6;
 }
 
@@ -57,7 +58,9 @@ button.navbar-toggle, .navbar-default .navbar-toggle:focus{
 }
 
 /* END OF NAVBAR CSS */
-
+a:hover{
+    text-decoration: none;
+}
 
 p{
   margin-top: 10px;
@@ -67,13 +70,13 @@ p{
 }
 
 h1{
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-top:0px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top:0;
 }
 
 h2{
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 div.about{
@@ -101,7 +104,7 @@ div.about{
 /* Buttons */
 .btn{
   height: 50px;
-  border-radius: 0px;
+  border-radius: 0;
   padding-left: 8px;
   padding-right: 8px;
 }
@@ -126,12 +129,12 @@ div.about{
   height: 50px;
   font-size: 20px;
   min-width: 100px;
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 /* Accordion Dropdowns */
 .panel-heading{
-  padding:0px;
+  padding:0;
 }
 
 #aTitle{

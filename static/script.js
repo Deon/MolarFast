@@ -4,11 +4,13 @@ $(function () { $("[data-toggle='tooltip']").tooltip(); });
 //Declare module
 var app = angular.module("MolarFast", ['ui.bootstrap', 'ngTouch']);
 
+//Change bindings due to conflict with Jinja 2.
 app.config(function($interpolateProvider) {
     $interpolateProvider.startSymbol('{[{');
     $interpolateProvider.endSymbol('}]}');
 });
 
+//Controller for Chemical Formulas
 app.controller('MainController', function($scope, $http){
 
     $scope.time = null;
@@ -20,6 +22,7 @@ app.controller('MainController', function($scope, $http){
         $scope.originalFormula = model;
         console.log($scope.originalFormula);
 
+        // Check to see that the formula exists.
         if ($scope.originalFormula === null || $scope.originalFormula === undefined || $scope.originalFormula === ""){
             $scope.error = "You should fill it in!";
             $scope.isError = true;
@@ -27,34 +30,38 @@ app.controller('MainController', function($scope, $http){
             console.log("undefined $scope.input");
         }
         else {
+            //HTTP request to API endpoint
             $http({
                 url: '/postChemFormula',
                 method: "POST",
                 data: JSON.stringify({'formula': model}),
                 headers: {'Content-Type': 'application/json'}
             })
-              .success(function (molarMass) {
-                  if (molarMass === ""){
-                      $scope.isError = true;
-                      $scope.error = "Check your formula!";
-                      console.log("Error in $scope.input.");
-                  }
-                  else {
-                      $scope.finalMolarMass = molarMass;
-                      $scope.isError = null;
-                  }
-                  console.log($scope.finalMolarMass);
-              })
-              .error(function () {
-                  console.log("Error in $scope.input.");
-                  $scope.error = "Check your formula!";
-                  $scope.finalMolarMass = null;
-                  $scope.isError = true;
-              });
+                .success(function (molarMass) {
+                    //Empty String returned; no chemical formula found.
+                    if (molarMass === ""){
+                        $scope.isError = true;
+                        $scope.error = "Check your formula!";
+                        console.log("Error in $scope.input.");
+                    }
+                    // Valid formula found
+                    else {
+                        $scope.finalMolarMass = molarMass;
+                        $scope.isError = null;
+                    }
+                    console.log($scope.finalMolarMass);
+                })
+                .error(function () {
+                    console.log("Error in $scope.input.");
+                    $scope.error = "Check your formula!";
+                    $scope.finalMolarMass = null;
+                    $scope.isError = true;
+                });
         }
     };
 });
 
+//Controller for temperature conversions
 app.controller('ConversionController', function($scope){
     $scope.input = null;
     $scope.firstUnit = "c";
