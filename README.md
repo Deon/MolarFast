@@ -25,7 +25,7 @@ The University of Waterloo, University of Waterloo Department of Chemical Engine
 
 MolarFast was created at SE Hack Day #13 on November 21, 2014 by
 <a href = "http://github.com/timmui">Timothy Mui</a>, a Computer Engineering student,
-and <a href = "http://github.com/DeonHua">Deon Hua</a>, a Software Engineering student.
+and <a href = "http://github.com/DeonHua">Deon Hua</a>, a Computer Science (Ex-Software Engineering) student.
 
 Made with love.
 
